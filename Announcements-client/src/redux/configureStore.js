@@ -1,8 +1,18 @@
-import { combineReducers , createStore } from 'redux'
+import { combineReducers , createStore,applyMiddleware } from 'redux'
+import createSagaMiddleware from 'redux-saga'
+import rootWatcherSaga from './sagas/rootSaga'
+import userReducer from "./ducks/userReducer"
 
 const reducers = combineReducers({
-    cout:0
+    user:userReducer
 })
-const store = createStore(reducers);
+const sagaMiddleware = createSagaMiddleware()
+
+const middlewares = [sagaMiddleware]
+
+const store = createStore(reducers,{},applyMiddleware(...middlewares));
+
+sagaMiddleware.run(rootWatcherSaga)
 
 export default store;
+

@@ -1,21 +1,18 @@
 const router = require('express').Router();
-// const usermodel = require('../models/usersModel')
-// const protect = require('../middlewares/authMiddleware')
+const protect = require('../middlewares/authMiddleware')
 const {
     userLogin,
-    userSignup
+    userSignup,
+    userMe,
+    userUpdate
 } = require('../controllers/userController')
 
 
-// router.get('/me',protect,(req,res)=>{
-//    const user = req.user
-//    console.log(user)
-//    res.json({user})
-// })
+router.get('/me',protect,userMe)
 
+router.put('/updateme',protect,userUpdate)
 
 router.post('/login',userLogin);
-
 
 router.post('/signup',userSignup);
 

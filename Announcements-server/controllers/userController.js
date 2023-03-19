@@ -1,5 +1,5 @@
 const bcrypt = require('bcryptjs')
-const tokenGenerator = require('../controllers/tokengenerator')
+const tokenGenerator = require('../controllers/tokengenerator');
 const UserModel = require('../models/usersModel')
 
 
@@ -9,7 +9,7 @@ const userLogin =async (req,res) => {
         const userEmaildata = await UserModel.findOne({Email})
 
         if(!userEmaildata){
-            res.status(404).json({"message":"Please enter the correct "})
+            res.status(403).json({"message":"Please enter the correct "})
         }
         else if(userEmaildata){
 
@@ -80,7 +80,37 @@ const  userSignup = async (req,res) => {
 }
 
 
+const userMe = async (req,res) => {
+    const id = req.user.id
+     try {
+        const userData = await UserModel.findById(id).select('-passwd' )
+        res.status(201).json({
+            message:"success",
+            data:userData
+        })
+     } catch (error) {
+        res.status(400).json({
+            message:"Not able to fetch"
+        })
+        console.log(error)
+     }
+}
+
+const userUpdate = async (req,res) => {
+    const id = req.user.id
+    const {FullName,Email,Phone_Num,Gender} = req.body;
+    console.log(req.body)
+    try {
+        const dataupdate = await UserModel.findByIdAndUpdate(id,{Name:FullName,Email:Email,Phone_Num:Phone_Num,Gender:Gender})
+        console.log("Dhanasai")
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 module.exports = {
     userLogin,
-    userSignup
+    userSignup,
+    userMe,
+    userUpdate
 }

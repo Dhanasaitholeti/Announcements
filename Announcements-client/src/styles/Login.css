@@ -1,0 +1,26 @@
+.login-page{
+    /* background-color: aqua;    */
+    height: 50vh;
+    width: 50vh;
+    margin: 0 auto;
+}
+.login-page h1{
+    text-align: center;
+}
+.input-section{
+    display: flex;
+    flex-direction: column;
+    margin-top:20%;
+}
+.input-section section{
+    margin:2vh auto;
+}
+p{
+    text-align: center;
+}
+
+.login-btn {
+    width: 20%;
+    margin: 0 auto;
+}
+
