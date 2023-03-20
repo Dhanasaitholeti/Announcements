@@ -9,14 +9,14 @@ const userLogin =async (req,res) => {
         const userEmaildata = await UserModel.findOne({Email})
 
         if(!userEmaildata){
-            res.status(403).json({"message":"Please enter the correct "})
+             res.status(404).json({"message":"Please enter the correct "})
         }
         else if(userEmaildata){
 
             const passwddata = await bcrypt.compare(passwd , userEmaildata.passwd)
 
             if(!passwddata){
-                res.json({"message":"enter the correct password"})
+                 res.status(404).json({"message":"enter the correct password"})
             }
 
             else{
@@ -46,6 +46,7 @@ const userLogin =async (req,res) => {
 const  userSignup = async (req,res) => {
 
     const {FullName,Email,passwd,Phone_Num,Gender} = req.body;
+    console.log(req.body)
     try {      
 
         const salt = await bcrypt.genSalt(10)

@@ -16,7 +16,7 @@ const protect = async  (req,res,next) => {
          }
     }
     else{
-        res.status(400).send("please try to login");
+        res.status(401).send("please try to login");
     }
 
 }

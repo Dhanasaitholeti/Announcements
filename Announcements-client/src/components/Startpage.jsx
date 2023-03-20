@@ -1,5 +1,18 @@
-import { Link } from "react-router-dom";
+import Cookies from "js-cookie";
+import { useEffect } from "react";
+import { Link, useNavigate  } from "react-router-dom";
 const Startpage = () => {
+    
+    const naviagte = useNavigate()
+
+    useEffect(()=>{
+        const jwt_token = Cookies.get('jwtToken')
+        if(jwt_token){
+            naviagte('/dashboard')
+        }
+    },[])
+
+    
     return ( 
         <>
 

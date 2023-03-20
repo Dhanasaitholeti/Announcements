@@ -1,18 +1,22 @@
 import {  useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Login.css";
-import { getUser } from "../redux/ducks/userReducer";
+import { getUser } from "../redux/ducks/userLoginReducer";
 import { useDispatch, useSelector } from "react-redux";
 
 const Login = () => {
-    const dat = useSelector(state=>state.user.user)
-    
     const usedispatch = useDispatch()
+
+    const isUserLoggedIn = useSelector(state=>state.user.userLoggedin)
+    const isLoginerror = useSelector(state=>state.user.UserError)
+    // console.log(isUserLoggedIn, isLoginerror)   
+     
    
     const [data,setData] = useState({
         userEmail: "",
         passwd:""
     })
+
 
     const handlechange = (e) => {
         setData({...data,[e.target.name]:e.target.value})
@@ -23,10 +27,18 @@ const Login = () => {
         const passwd = data.passwd
         usedispatch(getUser({Email,passwd}))
     }
+
+
+
+
     return (
         <div className="login-page" >
             <h1>Login</h1>
-        <div className="input-section">
+            <div className="input-section">
+            {
+             isLoginerror?
+             <h1>Enter correct details</h1>:(isUserLoggedIn && <h1>user login successful</h1>)    
+            }
             <section>
             <label htmlFor="userEmail">username:</label>
             <input type="email" name="userEmail" id="userEmail" onChange={handlechange} />

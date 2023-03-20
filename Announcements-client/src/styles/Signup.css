@@ -1,0 +1,11 @@
+.signup-div {
+     display : flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     width: 65%;
+     margin: 10% auto;
+}
+.signup-div input , .signup-div select , .signup-div button{    
+    width: 20%;
+}
