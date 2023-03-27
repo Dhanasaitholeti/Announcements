@@ -1,5 +1,7 @@
 export const GET_ANNOUNCEMENTS = 'GET_ANNOUNCEMENTS'
 const SET_ANNOUNCEMENTS = 'SET_ANNOUNCEMENTS'
+export const POST_ANNOUNCEMENT = "POST_ANNOUNCEMENT"
+
 
 export const getAnnouncemnt = () => ({
     type:GET_ANNOUNCEMENTS
@@ -10,6 +12,10 @@ export const setAnnouncemnt = (userData) => ({
     userData
 })
 
+export const postAnnouncement = (postData) => ({
+    type:POST_ANNOUNCEMENT,
+    postData
+})
 
 const initialState = {
     Data:undefined,

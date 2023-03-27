@@ -12,6 +12,15 @@ const getAnnouncements =async (req,res) => {
     }
 }
 
+const getindividualAnnouncement = async (req, res) => {
+    try {
+        const data = await Announcementmodel.findById()
+        res.status(200).json({data})
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 const AddAnnouncement = async (req,res) => {
     const {subject,description} = req.body;
     try {

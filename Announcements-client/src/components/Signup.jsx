@@ -30,7 +30,7 @@ const Signup = () => {
 
     return ( 
         <div className="signup-div">
-            name:<input type="text" name="name" id="name" onChange={handleDataChange}/>
+            name:<input type="text" name="name" id="namoe" onChange={handleDataChange}/>
             Email: <input type="email" name="Email" id="Email" onChange={handleDataChange}/>
             passwd: <input type="password" name="password" id="password" onChange={handleDataChange}/>
             confirm password: <input type="password" name="passwors" id="cpassword" />

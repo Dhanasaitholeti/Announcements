@@ -1,0 +1,4 @@
+.userDetails-view{
+    overflow: auto ;
+    max-height: 85vh;
+}

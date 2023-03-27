@@ -1,0 +1,14 @@
+.Main-Area{
+    margin:0.5% 1%;
+    display: grid;
+    grid-template-columns: 2fr 1fr ;
+    gap: 20px;
+}
+
+.Announcement-part,.userdetails-part{
+    background-color: #8BE4B8;
+    border-radius: 10px;
+    padding: 2% 5%;
+}
+
+
