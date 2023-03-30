@@ -1,7 +1,7 @@
 export const GET_ANNOUNCEMENTS = 'GET_ANNOUNCEMENTS'
 const SET_ANNOUNCEMENTS = 'SET_ANNOUNCEMENTS'
 export const POST_ANNOUNCEMENT = "POST_ANNOUNCEMENT"
-
+const RequestState = "REQUEST_STATE"
 
 export const getAnnouncemnt = () => ({
     type:GET_ANNOUNCEMENTS
@@ -17,10 +17,12 @@ export const postAnnouncement = (postData) => ({
     postData
 })
 
+
+
 const initialState = {
     Data:undefined,
     errstate:false,
-    loadingstate:true
+    loadingstate:true,
 }
 
 const Main_Reducer = (state=initialState,action) => {
@@ -31,7 +33,7 @@ const Main_Reducer = (state=initialState,action) => {
                 Data:action.userData.Data,
                 errstate:action.userData.errstate,
                 loadingstate:action.userData.loadingstate
-            })    
+            })
         default:
             return state
     }

@@ -1,3 +1,16 @@
-.each-Anno{
-    background-color: #6BDBA3;
+.announcement-allGroup{
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    gap: 20px;
+}
+.announcement-part,.announcement-operations{
+    background-color: azure;
+    border-radius: 20px;
+}
+.announcement-operations{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }

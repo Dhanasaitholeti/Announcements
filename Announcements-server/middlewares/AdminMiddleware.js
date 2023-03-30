@@ -8,7 +8,7 @@ const checkAdmin = async (req,res,next) => {
             const token = req.headers.authorization.split(' ')[1];
             const decoded = jwt.verify(token , process.env.JWT_KEY)
             if(!decoded.Admin){
-             return res.status(403).json({"message":"Access denied"})
+             return res.status(401).json({"message":"Access denied"})
             }
             
             req.user = await usermodel.findById(decoded.id).select('-passwd')
@@ -17,11 +17,11 @@ const checkAdmin = async (req,res,next) => {
             next()
         }
          catch (error) {
-        res.status(400).send("please try to login");
+        res.status(401).send("please try to login");
          }
     }
     else{
-        res.status(400).send("please try to login");
+        res.status(401).send("please try to login");
     }
 }
 

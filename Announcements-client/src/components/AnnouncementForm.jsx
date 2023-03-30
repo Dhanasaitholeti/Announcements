@@ -1,44 +1,27 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { postAnnouncement } from "../redux/ducks/AnnouncementReducer";
-const AnnouncementForm = () => {
+import NoAuth from "./NoAuth";
+import FormView from "./FormView";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getUserData } from "../redux/ducks/userdataReducer";
+
+const AnnouncementForm = (props) => {
     const dispatcher = useDispatch();
+    const errstate = useSelector(state => state.userData.errstate)
+    const loadstate  = useSelector(state => state.userData.loadingstate)
+    const data = useSelector(state =>state.userData.userData)
 
-    const [formdata,setFormdata] = useState({
-        subject:"",
-        description:""
-    })
+    useEffect(()=>{
+        dispatcher(getUserData())
+    },[])
 
-    console.log({...formdata})
-
-    const handleOnChange = (e) => {
-        setFormdata({
-            ...formdata,
-            [e.target.name]:e.target.value 
-        })
-    }
-    const handleSubmitClick = () => {
-        dispatcher(postAnnouncement({...formdata}))
-    }
     return ( 
         <>
-        <div className="announcement-submirt-form">
+        {
+            errstate?<NoAuth />:
+            (loadstate ?<Loading />:
+                data.Admin ? <FormView />:<h1>user Not authorized</h1>)
             
-            <div className="announcement-form-subject">
-                <label htmlFor="subject">Enter the subject</label>
-                <input type="text" name="subject" id="subject" onChange={handleOnChange}/>
-            </div>
-            
-            <div>
-                <label htmlFor="description">Enter the Description</label>
-                <input type="text" name="description" id="description"  onChange={handleOnChange}/>
-            </div>
-
-            <button type="button" onClick={handleSubmitClick}>
-                 Submit
-            </button>
-
-        </div>
+        }        
         </>
      );
 }

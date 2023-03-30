@@ -20,10 +20,8 @@ export function* getAnnouncementsHandle(){
 }
 
 export function* postAnnouncementHandle(action) {
-    console.log("Here in Handler")
     try {
         const data = yield call(() => postNewAnnouncement(action))
-        console.log(data)
     } catch (error) {
         console.log(error)
     }

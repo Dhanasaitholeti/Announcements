@@ -1,7 +1,5 @@
 const Announcementmodel = require('../models/AnnouncementsModel')
 
-
-
 const getAnnouncements =async (req,res) => {
     try {
         const data = await Announcementmodel.find({})
@@ -29,7 +27,7 @@ const AddAnnouncement = async (req,res) => {
              Description: description,
              Written_by:req.user.id
         })
-        res.status(200).json({ data })
+        res.status(201).json({ data })
 
     } catch (error) {
         console.log(error)
@@ -61,7 +59,6 @@ const updateAnnouncement = async (req,res) => {
     }
     
 }
-
 
 module.exports  = {
     getAnnouncements,
