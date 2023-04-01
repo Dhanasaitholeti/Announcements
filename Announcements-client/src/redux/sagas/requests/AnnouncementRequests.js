@@ -13,7 +13,6 @@ export const getAnnouncementsReq = () => {
 }
 
 export const postNewAnnouncement = (action) => {
-    console.log("here in request")
     const token = Cookies.get('jwtToken')
     return axios.request({
         method:'POST',
@@ -22,5 +21,32 @@ export const postNewAnnouncement = (action) => {
         headers:{
             Authorization:`Bearer ${token}`
         }
+    })
+}
+
+
+export const removeAnnoucement = (action) =>{
+    const token = Cookies.get('jwtToken')
+    const id = action.id
+    console.log(id)
+    return axios.request({
+        method:'DELETE',
+        url:`http://localhost:8080/announcements/del-Announcement/${id}?cache=${Date.now()}`,
+        headers:{
+            Authorization:`Bearer ${token}`
+        }
+    })
+}
+
+export const showAnnoucementRequest = (action) => {
+    const token = Cookies.get('jwtToken')
+    const id = action.id
+    return axios.request({
+        method:'GET',
+        url:`http://localhost:8080/announcements/getAnnouncement/${id}`,
+        headers:{
+            Authorization:`Bearer ${token}`
+        }
+
     })
 }

@@ -11,8 +11,9 @@ const getAnnouncements =async (req,res) => {
 }
 
 const getindividualAnnouncement = async (req, res) => {
+    const id = req.params.id
     try {
-        const data = await Announcementmodel.findById()
+        const data = await Announcementmodel.findById(id)
         res.status(200).json({data})
     } catch (error) {
         console.log(error)
@@ -38,8 +39,6 @@ const deleteAnnouncement = async (req,res) => {
     const id = req.params.id
     try {
         const deldata = await Announcementmodel.findByIdAndDelete(id)
-        console.log(deldata)
-
         res.status(201).json({"message":"Announcement deleted successfully"})
     } catch (error) {
         console.log(error)
@@ -51,8 +50,6 @@ const updateAnnouncement = async (req,res) => {
     const {subject,description} = req.body
     try {
         const updated_data = await Announcementmodel.findByIdAndUpdate(id,{subject:subject,Description:description})
-        console.log(updated_data)
-
         res.status(201).json({"message":"Data updated successfully"})
     } catch (error) {
         console.log(error);
@@ -64,5 +61,6 @@ module.exports  = {
     getAnnouncements,
     AddAnnouncement,
     deleteAnnouncement,
-    updateAnnouncement
+    updateAnnouncement,
+    getindividualAnnouncement
 }

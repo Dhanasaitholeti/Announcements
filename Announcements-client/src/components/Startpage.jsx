@@ -8,7 +8,7 @@ const Startpage = () => {
     useEffect(()=>{
         const jwt_token = Cookies.get('jwtToken')
         if(jwt_token){
-            naviagte('/dashboard')
+            naviagte('/home')
         }
     },[])
 

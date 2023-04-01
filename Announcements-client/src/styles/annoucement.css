@@ -14,3 +14,15 @@
     justify-content: center;
     gap: 20px;
 }
+.plus-icon{
+    background-color: beige;
+    width: max-content;
+    height: ratio(2/2);
+    padding: 2%;
+    margin: 1%;
+    border-radius: 50px;
+}
+.plus-icon:hover{
+    background-color:red;
+    color:white;
+}

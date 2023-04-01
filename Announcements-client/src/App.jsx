@@ -5,6 +5,8 @@ import Login from "./components/Login"
 import Signup from "./components/Signup"
 import Dashboard from "./components/Dashboard"
 import AnnouncementForm from "./components/AnnouncementForm"
+import Home from "./components/Home"
+import NoAuth from "./components/NoAuth"
 
 function App() {
   return (
@@ -14,8 +16,10 @@ function App() {
         <Route path="/" element={<Startpage/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/signup" element={<Signup/>} />
-        <Route path="/dashboard" element={<Dashboard/>} />
-        <Route path="/new-announcement" element={<AnnouncementForm/>} />
+        <Route path="/home/*" element={<Dashboard/>} />
+        {/* <Route path="/home/*" element={<Home/>} /> */}
+        {/* <Route path="/new-announcement" element={<AnnouncementForm/>} /> */}
+        <Route path="*" element={<NoAuth />} />
       </Routes>
     </div>
   )

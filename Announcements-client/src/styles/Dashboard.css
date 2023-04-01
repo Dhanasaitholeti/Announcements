@@ -5,8 +5,14 @@
     gap: 1.5%;
 }
 .Announcement-part,.userdetails-part{
+    
     border-radius: 20px;
     background-color: aquamarine;
     padding: 2% 5%;
     height: max-content;
+    max-height: 80vh;
+    overflow: auto;
+}
+.Announcement-part::-webkit-scrollbar,.userdetails-part::-webkit-scrollbar{
+    display: none;
 }

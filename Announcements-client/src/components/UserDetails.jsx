@@ -11,7 +11,6 @@ const UserDetails = () => {
     const user = useSelector(state=>state.userData.userData)
 
     const dispatcher = useDispatch();
-    console.log(user)
     useEffect(()=>{
         dispatcher(getUserData())
     },[])

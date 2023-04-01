@@ -5,11 +5,15 @@ const {
     getAnnouncements,
     AddAnnouncement,
     deleteAnnouncement,
-    updateAnnouncement
+    updateAnnouncement,
+    getindividualAnnouncement
 } = require('../controllers/annoucnementController')
 
 
 router.get('/',protect,getAnnouncements);
+
+
+router.get('/getAnnouncement/:id',protect,getindividualAnnouncement);
 
 
 router.post('/Add-Announcement',checkAdmin,AddAnnouncement);
@@ -19,8 +23,6 @@ router.delete('/del-Announcement/:id',checkAdmin,deleteAnnouncement);
 
 
 router.patch('/update-Announcement/:id',checkAdmin,updateAnnouncement);
-
-
 
 
 

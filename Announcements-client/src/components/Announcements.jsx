@@ -7,9 +7,10 @@ import AnnouncementView from "./AnnouncementView";
 import Loading from "./Loading"
 import NoAuth from "./NoAuth";
 import { faAdd } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate } from "react-router-dom";
+import { useNavigate  } from "react-router-dom";
 
- const Announcement = () => {   
+ const Announcement = () => {  
+    
     const navigator = useNavigate();
 
     const handleplusiconClick = () => {
@@ -20,14 +21,15 @@ import { useNavigate } from "react-router-dom";
     const loadstate = useSelector(state=>state.announcements.loadingstate)
     const announcementsData = useSelector(state=>state.announcements.Data)
     
+    console.log(announcementsData)
     const dispatcher = useDispatch();
 
     useEffect(()=>{
         dispatcher(getAnnouncemnt())
-    },[])
+    },[location.key])
 
     return ( 
-<>
+<>  
         
         <div className="announcement-allGroup">
         {
@@ -39,7 +41,7 @@ import { useNavigate } from "react-router-dom";
         </div> 
 
         <div className="plus-icon" onClick={handleplusiconClick}>
-                <FontAwesomeIcon icon={faAdd} size="1.7x" />
+                <FontAwesomeIcon icon={faAdd} size="1x" />
         </div>
 
         </>

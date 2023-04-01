@@ -20,7 +20,7 @@ const Login = () => {
     })
 
     if(isUserLoggedIn){
-        navigator('/dashboard')
+        navigator('/home')
     }
 
 
