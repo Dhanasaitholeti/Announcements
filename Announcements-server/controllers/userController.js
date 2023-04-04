@@ -46,7 +46,6 @@ const userLogin =async (req,res) => {
 const  userSignup = async (req,res) => {
 
     const {FullName,Email,passwd,Phone_Num,Gender} = req.body;
-    console.log(req.body)
     try {      
 
         const salt = await bcrypt.genSalt(10)
@@ -103,7 +102,6 @@ const userUpdate = async (req,res) => {
     console.log(req.body)
     try {
         const dataupdate = await UserModel.findByIdAndUpdate(id,{Name:FullName,Email:Email,Phone_Num:Phone_Num,Gender:Gender})
-        console.log("Dhanasai")
     } catch (error) {
         console.log(error)
     }

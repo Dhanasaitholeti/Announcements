@@ -31,7 +31,7 @@ export const removeAnnoucement = (action) =>{
     console.log(id)
     return axios.request({
         method:'DELETE',
-        url:`http://localhost:8080/announcements/del-Announcement/${id}?cache=${Date.now()}`,
+        url:`http://localhost:8080/announcements/del-Announcement/${id}`,
         headers:{
             Authorization:`Bearer ${token}`
         }
@@ -48,5 +48,18 @@ export const showAnnoucementRequest = (action) => {
             Authorization:`Bearer ${token}`
         }
 
+    })
+}
+
+
+export const updateAnnouncementReq = (action) => {
+    const token  = Cookies.get('jwtToken')
+    const id = action.id
+    return axios.request({
+        method:"PATCH",
+        url:`http://localhost:8080/announcements/update-Announcement/${id}`,
+        headers:{
+            Authorization:`Bearer ${token}`
+        }       
     })
 }

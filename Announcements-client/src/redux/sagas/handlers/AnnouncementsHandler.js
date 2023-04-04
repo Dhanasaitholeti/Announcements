@@ -1,6 +1,6 @@
 import {call,put} from 'redux-saga/effects'
 import { setAnnouncemnt, setIndAnnouncement } from '../../ducks/AnnouncementReducer'
-import { getAnnouncementsReq , postNewAnnouncement , removeAnnoucement , showAnnoucementRequest} from '../requests/AnnouncementRequests'
+import { getAnnouncementsReq , postNewAnnouncement , removeAnnoucement , showAnnoucementRequest, updateAnnouncementReq} from '../requests/AnnouncementRequests'
 
 export function* getAnnouncementsHandle(){
     try {
@@ -30,6 +30,16 @@ export function* postAnnouncementHandle(action) {
 export function* removeAnnouncementHandle(action) {
     try {
         const data = yield call(() => removeAnnoucement(action))
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
+export function* updateAnnoucementHandle(action) {
+    try {
+        const data = yield call(()=>updateAnnouncementReq(action))
+        
     } catch (error) {
         console.log(error)
     }

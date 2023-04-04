@@ -1,14 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {  faEdit, faExternalLink, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
-import { useDispatch } from "react-redux";
+import { faExternalLink, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch, useSelector } from "react-redux";
 import { deleteAnnoucement, getAnnouncemnt } from "../redux/ducks/AnnouncementReducer";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const AnnouncementView = ({data}) => {
+const AnnouncementView = ({data , userData}) => {
     const navigator = useNavigate()
     const dispatcher = useDispatch()
-
     const handleOnClickDelete = (id) => {
         dispatcher(deleteAnnoucement(id))
         dispatcher(getAnnouncemnt())
@@ -30,9 +29,12 @@ const AnnouncementView = ({data}) => {
                     </div>
                 
                     <div className="announcement-operations">
-                        <button type="button" onClick={() => handleOnClickDelete(eachobj._id)}>
+                       {
+
+                        userData.Admin&&(<button type="button" onClick={() => handleOnClickDelete(eachobj._id)}>
                         <FontAwesomeIcon icon={faTrashAlt}/>remove                       
-                        </button>
+                        </button>)
+                       }
                         {/* <button type="button">
                         <FontAwesomeIcon icon={faEdit} />edit
                         </button> */}

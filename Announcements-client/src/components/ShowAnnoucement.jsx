@@ -10,6 +10,7 @@ const ShowAnnouncement = () => {
     const errstate = useSelector(state=>state.announcements.inderrState)
     const loadstate = useSelector(state=>state.announcements.indloadingState)
     const data = useSelector(state=>state.announcements.indData)
+    const userData = useSelector(state=>state.userData.userData)
     const handleclick = ()=>{
             navigator(-1)
     }
@@ -25,10 +26,9 @@ const ShowAnnouncement = () => {
 
         dispatcher(showAnnouncement(id))
        
-        return() =>{
-            console.log("cleanup function")
-            dispatcher(resetState())
-        }    
+        // return() =>{
+        //     dispatcher(resetState())
+        // }    
 
     },[navigator])
 
@@ -38,7 +38,6 @@ const ShowAnnouncement = () => {
         {
             showEdit?
             (<>
-
                 <input type="text" name="subject" id="subject" value={data.subject}/><br />
             </>):
             (errstate?<NoAuth/>
@@ -51,7 +50,9 @@ const ShowAnnouncement = () => {
         }
 
         <button onClick={handleclick}>click</button>
-        <button type="button" onClick={handleEditClick}>edit</button>
+       {
+          userData.Admin && <button type="button" onClick={handleEditClick}>edit</button>
+       }
 
         </>
      );

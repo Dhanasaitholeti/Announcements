@@ -20,8 +20,7 @@ import { useNavigate  } from "react-router-dom";
     const errstate = useSelector(state=>state.announcements.errstate)
     const loadstate = useSelector(state=>state.announcements.loadingstate)
     const announcementsData = useSelector(state=>state.announcements.Data)
-    
-    console.log(announcementsData)
+    const userData = useSelector(state=>state.userData.userData)
     const dispatcher = useDispatch();
 
     useEffect(()=>{
@@ -36,7 +35,7 @@ import { useNavigate  } from "react-router-dom";
             //this is the whole logic for displaying components
             errstate?<NoAuth />:
                 (loadstate ?<Loading />:
-                    announcementsData && <AnnouncementView data={announcementsData}/>)
+                    (announcementsData && userData) && <AnnouncementView data={announcementsData} userData={userData}/>)
                 }
         </div> 
 

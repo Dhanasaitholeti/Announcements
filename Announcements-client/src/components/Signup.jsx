@@ -30,22 +30,31 @@ const Signup = () => {
 
     return ( 
         <div className="signup-div">
-            name:<input type="text" name="name" id="namoe" onChange={handleDataChange}/>
-            Email: <input type="email" name="Email" id="Email" onChange={handleDataChange}/>
-            passwd: <input type="password" name="password" id="password" onChange={handleDataChange}/>
-            confirm password: <input type="password" name="passwors" id="cpassword" />
-            phonenumber: <input type="text" name="phone_num" id="phone_num" onChange={handleDataChange}/>
-            Gender: <select name="Gender" id="Gender" onChange={handleDataChange}>
+
+            <input type="text" name="name" id="namoe" onChange={handleDataChange} placeholder="FullName"/>
+
+            <input type="email" name="Email" id="Email" onChange={handleDataChange} placeholder="Email"/>
+
+            <input type="password" name="password" id="password" onChange={handleDataChange} placeholder="Password"/>
+
+            <input type="password" name="passwors" id="cpassword" placeholder="confirm password" />
+
+            <input type="text" name="phone_num" id="phone_num" onChange={handleDataChange} placeholder="PhoneNumber"/>
+
+            <select name="Gender" id="Gender" onChange={handleDataChange}>
                 <option value="">select</option>
                  <option value="MALE">Male</option>
                  <option value="FEMALE">Female</option>
+                 <option value="Others">Others</option>
             </select>
+
             <button 
             type="button"
             onClick={handleSignupClick}
             >
             Signup
             </button>
+            
         </div>
      );
 }

@@ -39,25 +39,34 @@ const Login = () => {
         <div className="login-page" >
             <h1>Login</h1>
             <div className="input-section">
-            {
+
+
+            {/* {
              isLoginerror?
              <h1>Enter correct details</h1>:
              (isUserLoggedIn && <h1>user login successful</h1>)    
-            }
+            } */}
+
+
+
             <section>
-            <label htmlFor="userEmail">username:</label>
-            <input type="email" name="userEmail" id="userEmail" onChange={handlechange} />
+            <input type="email" name="userEmail" id="userEmail" onChange={handlechange} placeholder="Emailadress" required/>
             </section>
+
             <section>
-                <label htmlFor="passwd">Password:</label>
-                <input type="password" name="passwd" id="passwd" onChange={handlechange} />
+                <input type="password" name="passwd" id="passwd" onChange={handlechange} placeholder="Password" required/>
             </section>
+
         </div>
+
+
             <div className="login-btn">
             <button type="button" onClick={handleLoginsubmit}>
                 Login
             </button>
             </div>
+
+
         <p>Don't have account?<Link to="/signup">signup</Link></p>
     
         </div>

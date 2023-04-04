@@ -1,3 +1,4 @@
+import "../styles/Startpage.css"
 import Cookies from "js-cookie";
 import { useEffect } from "react";
 import { Link, useNavigate  } from "react-router-dom";
@@ -12,17 +13,26 @@ const Startpage = () => {
         }
     },[])
 
-    
+
     return ( 
-        <>
+        
+    <div className="container-startpage">
+        
+        <h1>Welcome to the Dindora</h1>
 
-        <h1>Welcome to the Announcements</h1>
+     
+     <div className="container-btns">
 
+        <button type="button"><Link to="/login">Login</Link></button>
 
-        <Link to="/login"><button type="button">Login</button></Link>
-        <Link to="/signup"><button type="button">Signup</button></Link>
+        <p>or</p>
 
-        </>
+        <button type="button"><Link to="/signup">Signup</Link></button>
+        
+     </div>
+
+    </div>
+
      );
 }
  
