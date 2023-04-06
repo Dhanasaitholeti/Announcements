@@ -24,8 +24,8 @@ const AnnouncementView = ({data , userData}) => {
                 return ( 
     <React.Fragment key={eachobj._id}>
                     <div className="announcement-part" >
-                        <h1>{eachobj.subject}</h1>  
-                        <h2>{eachobj.Description}</h2>  
+                        <p classname="announcement-subject">{eachobj.subject}</p>  
+                        <p className="announcement-description">{eachobj.Description.slice(0,30)+'........'}</p>  
                     </div>
                 
                     <div className="announcement-operations">

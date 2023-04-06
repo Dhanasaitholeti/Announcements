@@ -14,7 +14,7 @@ import { useNavigate  } from "react-router-dom";
     const navigator = useNavigate();
 
     const handleplusiconClick = () => {
-        navigator('/new-announcement')
+        navigator('/home/new-announcement')
     }
 
     const errstate = useSelector(state=>state.announcements.errstate)

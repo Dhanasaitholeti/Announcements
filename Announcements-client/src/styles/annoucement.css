@@ -1,27 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Rubik:wght@400;600&display=swap');
+
+@font-face {
+    font-family: metropolis;
+    src: url('../assets/fonts/Metropolis-SemiBold.otf');
+}
+
 .announcement-allGroup{
     display: grid;
     grid-template-columns: 5fr 1fr;
     gap: 20px;
 }
+
 .announcement-part,.announcement-operations{
-    background-color: azure;
+    background-color: white;
     border-radius: 20px;
+    box-shadow: 0px 1px 3px black;
+}
+.announcement-part{
+    display: flex;
+    flex-direction: column;
+}
+p:nth-child(1){
+    padding:0;
+    font-size: 32px;
+    margin: 2% 0 0 2%;
+    font-family: metropolis;
+}
+p:nth-child(2){
+    margin: 2% 0 2% 2%;
+    opacity: 0.69;
+    font-family: 'Rubik', sans-serif;
 }
 .announcement-operations{
     display:flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
     justify-content: center;
     gap: 20px;
+
 }
+
+.announcement-operations button{
+    width: 30%;
+    aspect-ratio: 1/1;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 75px;
+    box-shadow: 0px 1px 3px black;
+}
+.announcement-operations button:active{
+    box-shadow: 0px 0.5px 1px black;
+}
+.announcement-operations button:hover{
+    cursor: pointer;
+
+}
+
 .plus-icon{
     background-color: beige;
-    width: max-content;
-    height: ratio(2/2);
-    padding: 2%;
+    width: 50px;
+    height: 50px;
+    padding: 1%;
     margin: 1%;
-    border-radius: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 .plus-icon:hover{
     background-color:red;
     color:white;

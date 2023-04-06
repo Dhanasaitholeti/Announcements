@@ -50,14 +50,14 @@ const Login = () => {
 
 
             <section>
-            <input type="email" name="userEmail" id="userEmail" onChange={handlechange} placeholder="Emailadress" required/>
+            <input type="email" name="userEmail" id="userEmail" onChange={handlechange} placeholder="Emailaddress" required/>
             </section>
 
             <section>
                 <input type="password" name="passwd" id="passwd" onChange={handlechange} placeholder="Password" required/>
             </section>
 
-        </div>
+            </div>
 
 
             <div className="login-btn">
@@ -67,7 +67,7 @@ const Login = () => {
             </div>
 
 
-        <p>Don't have account?<Link to="/signup">signup</Link></p>
+        <p className="login-signup-btn">Don't have account?<Link to="/signup">signup</Link></p>
     
         </div>
 

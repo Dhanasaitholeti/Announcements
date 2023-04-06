@@ -12,19 +12,21 @@
     aspect-ratio: 1/1;
     border-radius: 20px;
     padding: 10%;
-    background-color: #F9F7F3;
+    background-color: #ECF9FF;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 10px;
     justify-content: center;
     box-shadow: 0.1px 2px 10px black;
+    gap: 20px;
 }
+/* F9F7F3 */
 .container-btns button{
     width: 100%;
     border-radius: 20px;
     height:20%;
-    background-color: #F19C41;
+    background-color: #EB6440;
     border: none;
     box-shadow: 0px 3px 5px black;
 }

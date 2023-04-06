@@ -1,12 +1,20 @@
+@font-face {
+    font-family: 'kiera';
+    src: url('../assets/fonts/keiraseriffreeregular-k7app.otf');
+}
+.Navbar h1{
+    color: #C92C39;
+    font-family: kiera;
+    font-size: 2.2rem;
+}
 .Navbar{
     height: max-content;
     padding: 5px;
-    background-color: #F9F7F3;
+    background-color: #ECF9FF;
     display: flex;
     align-items: center;
     justify-content: space-around;
     margin: 0.5% 1%;
-    border: 1px solid #E1EEED;
     border-radius: 15px;
     box-shadow: 0.1px 2px 10px #122932;
 }
