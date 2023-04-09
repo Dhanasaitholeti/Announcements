@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createUser } from "../redux/ducks/userLoginReducer";
 import "../styles/Signup.css"
+import {Link} from 'react-router-dom'
 
 const Signup = () => {
     const dispatcher = useDispatch()
@@ -47,25 +48,6 @@ const Signup = () => {
                  <option value="FEMALE">Female</option>
                  <option value="Others">Others</option>
             </select>
-            
-            {/* <div className="Gender-input">
-            Gender:
-            <div className="Gender-options">
-                <section>
-
-            Male<input type="radio" name="Gender" id="Gender" />
-                </section>
-                <section>
-
-            Female<input type="radio" name="Gender" id="Gender" />
-                </section>
-
-                <section>
-
-            Others<input type="radio" name="Gender" id="Gender" />
-                </section>
-            </div>
-            </div> */}
 
             <button 
             type="button"
@@ -73,6 +55,8 @@ const Signup = () => {
             >
             Signup
             </button>
+
+            <p>already have account?<Link to="/login">login</Link></p>
 
         </div>
      );

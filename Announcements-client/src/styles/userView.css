@@ -2,3 +2,14 @@
     overflow: auto ;
     max-height: 85vh;
 }
+.image-container{
+    width: max-content;
+    height: max-content;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    
+}
+.image-container img{
+    width: 50%;
+}

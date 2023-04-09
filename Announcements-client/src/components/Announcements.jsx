@@ -39,10 +39,12 @@ import { useNavigate  } from "react-router-dom";
                 }
         </div> 
 
+    <div className="icons">
         <div className="plus-icon" onClick={handleplusiconClick}>
                 <FontAwesomeIcon icon={faAdd} size="1x" />
         </div>
 
+    </div>
         </>
      );
 }

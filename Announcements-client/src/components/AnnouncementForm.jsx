@@ -15,14 +15,15 @@ const AnnouncementForm = (props) => {
     },[])
 
     return ( 
-        <>
+        <div className="Add-Announcement">
+
         {
             errstate?<NoAuth />:
             (loadstate ?<Loading />:
                 data.Admin ? <FormView />:<h1>user Not authorized</h1>)
             
         }        
-        </>
+        </div>
      );
 }
 

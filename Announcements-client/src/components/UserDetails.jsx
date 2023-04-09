@@ -10,6 +10,7 @@ const UserDetails = () => {
     const loadingstate = useSelector(state => state.userData.loadingstate)
     const user = useSelector(state=>state.userData.userData)
 
+    console.log(user)
     const dispatcher = useDispatch();
     useEffect(()=>{
         dispatcher(getUserData())

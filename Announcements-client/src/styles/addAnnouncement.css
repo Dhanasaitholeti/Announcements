@@ -1,0 +1,55 @@
+textarea{
+    resize: none;
+    background-color: transparent;
+    border-radius: 20px;
+    padding: 2%;
+}
+textarea::-webkit-scrollbar{
+    display: none;
+}
+.announcement-submirt-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+.back-icons{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.icons-back-button{
+    border-radius: 50px;
+    color: #C92C39;
+}
+.icons-back-button:hover{
+    color: #ECF2FF;
+    background-color: #C92C39;
+}
+.container-heading{
+    font-family: kiera;
+    color: #C92C39;
+}
+
+.Form-submit-btn{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    margin: 2% 0 0 0;   
+}
+.Form-submit-btn button{
+    width:10%;
+    background-color: #C92C39;
+    padding: 0.5%;
+    border: 1px solid #C92C39;
+    border-radius:20px;
+    color: #ECF2FF;
+    box-shadow: 0px 3px 5px black;
+}
+.Form-submit-btn button:hover{
+    background-color: #ECF2FF;
+    color: #C92C39;
+}
+.Form-submit-btn button:active{
+    box-shadow: 0px 0.5px 2px black;
+}

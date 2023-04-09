@@ -5,11 +5,12 @@
 .Navbar h1{
     color: #C92C39;
     font-family: kiera;
-    font-size: 2.2rem;
+    font-size: 2.3rem;
+    letter-spacing: 2px;
 }
 .Navbar{
     height: max-content;
-    padding: 5px;
+    padding: 4px;
     background-color: #ECF9FF;
     display: flex;
     align-items: center;
