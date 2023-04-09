@@ -5,7 +5,7 @@ const UserView = ({data}) => {
     return ( 
         <div className="userDetails-view">
             <div className="image-container">
-                <img src={animeboy} />
+                <img src={data.Gender==="FEMALE"?animegirl:animeboy} />
             </div>
             {/* <p>{`${data.Admin}`}</p> */}
             <p>{data.Name}</p>

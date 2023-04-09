@@ -4,6 +4,10 @@
     font-family: metropolis;
     src: url('../assets/fonts/Metropolis-SemiBold.otf');
 }
+@font-face {
+    font-family: josefinsans;
+    src: url("../assets/fonts/JosefinSans-Regular.ttf");
+}
 
 .announcement-allGroup{
     display: grid;
@@ -24,7 +28,7 @@ p:nth-child(1){
     padding:0;
     font-size: 32px;
     margin: 2% 0 0 2%;
-    font-family: metropolis;
+    font-family: josefinsans;
     color: #C92C39;
 }
 p:nth-child(2){

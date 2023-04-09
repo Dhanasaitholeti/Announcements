@@ -14,6 +14,7 @@ const FormView = () => {
         subject:"",
         description:""
     })
+    console.log({...formdata})
     
     const handleOnChange = (e) => {
 
