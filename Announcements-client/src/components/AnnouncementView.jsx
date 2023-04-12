@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteAnnoucement, getAnnouncemnt } from "../redux/ducks/AnnouncementReducer";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+
 
 const AnnouncementView = ({data , userData}) => {
     const navigator = useNavigate()
@@ -25,7 +27,11 @@ const AnnouncementView = ({data , userData}) => {
     <React.Fragment key={eachobj._id}>
                     <div className="announcement-part" >
                         <p className="announcement-subject">{eachobj.subject}</p>  
-                        <p className="announcement-description">{eachobj.Description.slice(0,30)+'........'}</p>  
+                        <p className="announcement-description">
+                        
+                                {eachobj.Description.slice(0,30)+'........'}
+
+                            </p>  
                     </div>
                 
                     <div className="announcement-operations">

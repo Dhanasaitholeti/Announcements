@@ -54,9 +54,10 @@ export const showAnnoucementRequest = (action) => {
 
 export const updateAnnouncementReq = (action) => {
     const token  = Cookies.get('jwtToken')
-    const id = action.id
+    const id = action.data.id
     return axios.request({
         method:"PATCH",
+        data:action.data.editData,
         url:`http://localhost:8080/announcements/update-Announcement/${id}`,
         headers:{
             Authorization:`Bearer ${token}`

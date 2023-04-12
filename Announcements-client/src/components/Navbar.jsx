@@ -32,15 +32,15 @@ const Navbar = () => {
             <h1>Dhindora</h1>
             <div className="Navbar-links">
                <div className="Navbar-ind-link">
-                <FontAwesomeIcon icon={faSun} size="2x"/>
+                <FontAwesomeIcon icon={faSun} />
                 </div> 
 
                 <div className="Navbar-ind-link">
-                <a href=""><FontAwesomeIcon icon={faContactCard} size="2x"/></a>
+                <a href=""><FontAwesomeIcon icon={faContactCard} /></a>
                 </div>
 
                 <div className="user-optionss Navbar-ind-link" onClick={handleMouseOn} >
-                <FontAwesomeIcon icon={faUser} size="2x" />
+                <FontAwesomeIcon icon={faUser}  />
                 {
                    !(location.pathname == '/login' || location.pathname == '/' || location.pathname == '/signup')
                     &&

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { postAnnouncement } from "../redux/ducks/AnnouncementReducer";
 import {useNavigate} from "react-router-dom"
+import { ToastContainer } from 'react-toastify';
 import "../styles/addAnnouncement.css";
 const FormView = () => {
     const navigator = useNavigate();
@@ -14,8 +15,7 @@ const FormView = () => {
         subject:"",
         description:""
     })
-    console.log({...formdata})
-    
+ 
     const handleOnChange = (e) => {
 
         setFormdata({
@@ -23,7 +23,7 @@ const FormView = () => {
             [e.target.name]:e.target.value  
         })
     }
-    console.log({...formdata})
+   
 
     const handleSubmitClick = () => {
         dispatcher(postAnnouncement({...formdata}))
@@ -48,6 +48,10 @@ const FormView = () => {
             </div>
                 <div className="container-heading">
                 <h1>Make New Dhindora..!</h1>
+                </div>
+
+                <div>
+                    <ToastContainer />
                 </div>
             
             <div className="announcement-form-subject">

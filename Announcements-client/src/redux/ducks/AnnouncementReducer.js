@@ -1,6 +1,7 @@
 export const GET_ANNOUNCEMENTS = 'GET_ANNOUNCEMENTS'
 export const DELETE_ANNOUNCEMENT = "DELETE_ANNOUNCEMENT"
 export const POST_ANNOUNCEMENT = "POST_ANNOUNCEMENT"
+export const EDIT_ANNOUNCEMENT = "EDIT_ANNOUNCEMENT"
 export const SHOW_ANNOUNCEMENT = "SHOW_ANNOUNCEMENT"
 const SET_INDIVIDUAL_ANNOUNCEMENT = "SET_INDIVIDUAL_ANNOUNCEMENT"
 const SET_ANNOUNCEMENTS = 'SET_ANNOUNCEMENTS'
@@ -31,10 +32,16 @@ export const deleteAnnoucement = (id) => ({
     id
 }) 
 
+export const editAnnouncement = (data) => ({
+    type:EDIT_ANNOUNCEMENT,
+    data
+})
+
 export const requestStateUpdate = (stateData) => ({
     type:REQUEST_STATE_UPDATE,
     stateData
 })
+
 
 export const showAnnouncement = (id) => ({
     type:SHOW_ANNOUNCEMENT,

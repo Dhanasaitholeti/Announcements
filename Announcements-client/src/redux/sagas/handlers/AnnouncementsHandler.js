@@ -1,6 +1,8 @@
 import {call,put} from 'redux-saga/effects'
 import { setAnnouncemnt, setIndAnnouncement } from '../../ducks/AnnouncementReducer'
 import { getAnnouncementsReq , postNewAnnouncement , removeAnnoucement , showAnnoucementRequest, updateAnnouncementReq} from '../requests/AnnouncementRequests'
+import { toast } from 'react-toastify'
+
 
 export function* getAnnouncementsHandle(){
     try {
@@ -21,7 +23,8 @@ export function* getAnnouncementsHandle(){
 
 export function* postAnnouncementHandle(action) {
     try {
-        const data = yield call(() => postNewAnnouncement(action))
+        yield call(() => postNewAnnouncement(action))
+        toast.success("Document created succesfully");
     } catch (error) {
         console.log(error)
     }
@@ -30,6 +33,7 @@ export function* postAnnouncementHandle(action) {
 export function* removeAnnouncementHandle(action) {
     try {
         const data = yield call(() => removeAnnoucement(action))
+        
     } catch (error) {
         console.log(error)
     }
@@ -37,9 +41,9 @@ export function* removeAnnouncementHandle(action) {
 
 
 export function* updateAnnoucementHandle(action) {
+    console.log(action.data)
     try {
-        const data = yield call(()=>updateAnnouncementReq(action))
-        
+        yield call(()=>updateAnnouncementReq(action))
     } catch (error) {
         console.log(error)
     }
@@ -48,7 +52,6 @@ export function* updateAnnoucementHandle(action) {
 export function* showAnnouncementHandle(action) {
     try {
         const res = yield call(()=>showAnnoucementRequest(action))
-        console.log(res)
         yield put(setIndAnnouncement({
             Data:res.data.data,
             errstate:false,

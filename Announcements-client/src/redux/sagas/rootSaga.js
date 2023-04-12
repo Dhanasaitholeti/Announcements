@@ -19,8 +19,8 @@ function* getUserDatawatchersaga(){
 
 
 //announcement part starts here
-import { DELETE_ANNOUNCEMENT, GET_ANNOUNCEMENTS, POST_ANNOUNCEMENT, SHOW_ANNOUNCEMENT } from "../ducks/AnnouncementReducer"
-import { getAnnouncementsHandle, postAnnouncementHandle, removeAnnouncementHandle ,showAnnouncementHandle} from "./handlers/AnnouncementsHandler"
+import { DELETE_ANNOUNCEMENT, EDIT_ANNOUNCEMENT, GET_ANNOUNCEMENTS, POST_ANNOUNCEMENT, SHOW_ANNOUNCEMENT } from "../ducks/AnnouncementReducer"
+import { getAnnouncementsHandle, postAnnouncementHandle, removeAnnouncementHandle ,showAnnouncementHandle, updateAnnoucementHandle} from "./handlers/AnnouncementsHandler"
 
 function* getAnnouncementWatcherSaga(){
     yield takeLatest(GET_ANNOUNCEMENTS , getAnnouncementsHandle)
@@ -36,6 +36,10 @@ function* removeAnnouncementWatcherSaga(){
 function* showAnnouncementWatcherSaga(){
     yield takeLatest(SHOW_ANNOUNCEMENT , showAnnouncementHandle )
 } 
+
+function* updateAnnouncementWatcherSaga(){
+    yield takeLatest(EDIT_ANNOUNCEMENT , updateAnnoucementHandle)
+}
 //announcent part ends here
 
 export default function* rootWatcherSaga(){
@@ -46,6 +50,7 @@ export default function* rootWatcherSaga(){
         getAnnouncementWatcherSaga(),
         showAnnouncementWatcherSaga(),
         removeAnnouncementWatcherSaga(),
+        updateAnnouncementWatcherSaga(),
         postNewAnnouncementWatcherSaga(),
     ])
 }

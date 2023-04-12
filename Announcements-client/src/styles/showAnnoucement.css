@@ -43,9 +43,14 @@
     text-align: center;
     font-family: 'Josefin Sans', sans-serif;
 }
-.annoucement-main-des p{
+.annoucement-main-des{
     font-family: josefinsans;
     font-size: 22px;
     color: #1F1F1F;
     /* color: #0F1A20; */
+}
+.annoucement-main-heading p{
+    font-family: metropolis;
+    color: #C92C39;
+    font-size: 32px;
 }
