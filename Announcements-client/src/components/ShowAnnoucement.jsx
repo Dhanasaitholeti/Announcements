@@ -7,6 +7,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import {   editAnnouncement, showAnnouncement } from "../redux/ducks/AnnouncementReducer";
 import NoAuth from "./NoAuth";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import { ToastContainer } from "react-toastify";
 
 
 const ShowAnnouncement = () => {
@@ -79,6 +80,8 @@ const ShowAnnouncement = () => {
             !userload && (userData && (userData.Admin && <button type="button" className="btn-edit" onClick={handleEditClick}>edit</button>))
         }
 
+       
+
         </div>
 
 
@@ -86,6 +89,10 @@ const ShowAnnouncement = () => {
             showEdit?
             (
                 <div className="announcement-main-show">
+                     <ToastContainer 
+                        position="bottom-center"
+                        autoClose={3000}
+                     />
                      <div className="announcement-form-subject">
                 <label htmlFor="subject">Enter the subject:</label><br />
                 <textarea 

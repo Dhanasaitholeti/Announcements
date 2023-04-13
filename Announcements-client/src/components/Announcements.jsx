@@ -8,6 +8,8 @@ import Loading from "./Loading"
 import NoAuth from "./NoAuth";
 import { faAdd } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate  } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
  const Announcement = () => {  
@@ -41,6 +43,10 @@ import { useNavigate  } from "react-router-dom";
         </div> 
 
     <div className="icons">
+                <ToastContainer 
+                    position="bottom-center"
+                    autoClose={3000}
+                />
         <div className="plus-icon" onClick={handleplusiconClick}>
                 <FontAwesomeIcon icon={faAdd} size="1x" />
         </div>

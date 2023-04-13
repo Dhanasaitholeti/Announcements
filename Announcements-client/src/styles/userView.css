@@ -3,7 +3,7 @@
     max-height: 85vh;
 }
 .image-container{
-    width: max-content;
+    width: 450px;
     height: max-content;
     margin: 0 auto;
     display: flex;
@@ -11,5 +11,21 @@
     
 }
 .image-container img{
-    width: 50%;
+    width: 40%;
 }
+/* .userDetails-details{
+    display: flex;
+    flex-direction: column;
+    align-items: space-;
+    justify-content: center;
+} */
+
+.userDetails-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .userDetails-details p {
+    margin: 0;
+  }

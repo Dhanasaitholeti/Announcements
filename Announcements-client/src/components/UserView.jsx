@@ -7,10 +7,16 @@ const UserView = ({data}) => {
             <div className="image-container">
                 <img src={data.Gender==="FEMALE"?animegirl:animeboy} />
             </div>
-            {/* <p>{`${data.Admin}`}</p> */}
-            <p>{data.Name}</p>
-            <p>{data.Email}</p>
-            <p>{data.Gender}</p>
+
+            <div className="userDetails-container">
+            <div className="userDetails-details">
+            <p>Name:{data.Name}</p>
+            <p>Gender:{data.Gender}</p>
+            <p>Email:{data.Email}</p>
+            <p>Role:{data.Admin?"Admin":data.POR}</p>
+            <p>Phone_Number:{data.Phone_Num}</p>
+            </div>
+            </div>
         </div>
      );
 }

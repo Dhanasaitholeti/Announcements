@@ -24,18 +24,20 @@ export function* getAnnouncementsHandle(){
 export function* postAnnouncementHandle(action) {
     try {
         yield call(() => postNewAnnouncement(action))
-        toast.success("Document created succesfully");
+        toast.success("Dhindora created!");
+        window.location.reload();
     } catch (error) {
         console.log(error)
+        toast.error("Failed to created");
     }
 }
 
 export function* removeAnnouncementHandle(action) {
     try {
-        const data = yield call(() => removeAnnoucement(action))
-        
+        yield call(() => removeAnnoucement(action))
+        toast.success("Dhindora deleted!")
     } catch (error) {
-        console.log(error)
+        toast.error(error.message)
     }
 }
 
@@ -44,8 +46,10 @@ export function* updateAnnoucementHandle(action) {
     console.log(action.data)
     try {
         yield call(()=>updateAnnouncementReq(action))
+        toast.success("Dhindora updated!")
     } catch (error) {
         console.log(error)
+        toast.error("Failed to update Dhindora");
     }
 }
 

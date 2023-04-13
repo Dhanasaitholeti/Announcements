@@ -1,10 +1,11 @@
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLink, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteAnnoucement, getAnnouncemnt } from "../redux/ducks/AnnouncementReducer";
-import React from "react";
 import { useNavigate } from "react-router-dom";
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+
+
 
 
 const AnnouncementView = ({data , userData}) => {
@@ -24,7 +25,7 @@ const AnnouncementView = ({data , userData}) => {
         {
             data.map((eachobj)=>{
                 return ( 
-    <React.Fragment key={eachobj._id}>
+                    <React.Fragment key={eachobj._id}>
                     <div className="announcement-part" >
                         <p className="announcement-subject">{eachobj.subject}</p>  
                         <p className="announcement-description">
@@ -33,17 +34,18 @@ const AnnouncementView = ({data , userData}) => {
 
                             </p>  
                     </div>
-                
                     <div className="announcement-operations">
                        {
-
-                        userData.Admin&&(<button type="button" onClick={() => handleOnClickDelete(eachobj._id)}>
+                           
+                           userData.Admin&&(<button type="button" onClick={() => handleOnClickDelete(eachobj._id)}>
                         <FontAwesomeIcon icon={faTrashAlt}/>remove                       
                         </button>)
                        }
                         {/* <button type="button">
                         <FontAwesomeIcon icon={faEdit} />edit
-                        </button> */}
+                    </button> */}
+
+                    
                         <button type="button" onClick={() => handleOnClickShow(eachobj._id)}>
                         <FontAwesomeIcon icon={faExternalLink} />show
                         </button>
