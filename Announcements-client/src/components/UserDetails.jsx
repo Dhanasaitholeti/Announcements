@@ -15,8 +15,6 @@ const UserDetails = () => {
         dispatcher(getUserData())
     },[])
 
-
-
     return ( 
         <>
         {

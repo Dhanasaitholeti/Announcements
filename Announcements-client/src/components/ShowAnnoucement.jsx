@@ -94,7 +94,7 @@ const ShowAnnouncement = () => {
                         autoClose={3000}
                      />
                      <div className="announcement-form-subject">
-                <label htmlFor="subject">Enter the subject:</label><br />
+                <label htmlFor="subject">Edit the subject:</label><br />
                 <textarea 
                 name="subject" 
                 id="subject" 
@@ -106,7 +106,7 @@ const ShowAnnouncement = () => {
                 </div>
                 
                 <div className="announcement-form-description">
-                <label htmlFor="description">Enter the Description:</label><br />
+                <label htmlFor="description">Edit the Description:</label><br />
                 <textarea 
                 name="description" 
                 id="description" 

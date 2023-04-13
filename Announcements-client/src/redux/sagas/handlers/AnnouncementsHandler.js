@@ -25,7 +25,6 @@ export function* postAnnouncementHandle(action) {
     try {
         yield call(() => postNewAnnouncement(action))
         toast.success("Dhindora created!");
-        window.location.reload();
     } catch (error) {
         console.log(error)
         toast.error("Failed to created");
