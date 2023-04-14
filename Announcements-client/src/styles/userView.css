@@ -23,11 +23,18 @@
   }
   
   .userDetails-title {
+    color: #1F1F1F;
+    font-size: 20px;
     grid-column: 1 / 2;
     justify-self:center;
+    font-family: metropolis;
   }
   
   .userDetails-value {
+    font-weight: bold;
+    font-family: josefinsans;
+    color: #C92C39;
+    font-size: 20px;
     grid-column: 2 / 3;
   }
-  
+

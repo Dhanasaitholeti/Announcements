@@ -48,6 +48,11 @@ const ShowAnnouncement = () => {
             }
         }
         ))
+
+
+        setTimeout(()=>{
+            setShowEdit(false)
+        },2000)
     }
 
 
@@ -88,7 +93,7 @@ const ShowAnnouncement = () => {
         {
             showEdit?
             (
-                <div className="announcement-main-show">
+                <div className="announcement-main-show-edit">
                      <ToastContainer 
                         position="bottom-center"
                         autoClose={3000}

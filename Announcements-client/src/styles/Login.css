@@ -34,11 +34,12 @@ section input{
 }
 .login-btn button{
     border: 1px solid #122932;
+    color: #fff;
     padding: 10px;
     margin: 5% auto;
     width: 25%;
     border-radius: 20px;
-    background-color: #EB6440;
+    background-color: #C92C39;
     box-shadow: 0px 3px 5px black;
 }
 

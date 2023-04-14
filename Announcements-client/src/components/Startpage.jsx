@@ -13,6 +13,10 @@ const Startpage = () => {
         }
     },[])
 
+    const handleOnClickOnButtons = (routeName) => {
+        naviagte(`/${routeName}`)
+    }
+
 
     return ( 
         
@@ -23,11 +27,11 @@ const Startpage = () => {
      
      <div className="container-btns">
 
-        <button type="button"><Link to="/login">Login</Link></button>
+        <button type="button" onClick={() => handleOnClickOnButtons("login")}>Login</button>
 
         <p>or</p>
 
-        <button type="button"><Link to="/signup">Signup</Link></button>
+        <button type="button" onClick={() => handleOnClickOnButtons("signup")}>Signup</button>
         
      </div>
 

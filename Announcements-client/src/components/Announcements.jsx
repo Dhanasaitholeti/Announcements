@@ -23,7 +23,10 @@ import 'react-toastify/dist/ReactToastify.css';
     const errstate = useSelector(state=>state.announcements.errstate)
     const loadstate = useSelector(state=>state.announcements.loadingstate)
     const announcementsData = useSelector(state=>state.announcements.Data)
+
     const userData = useSelector(state=>state.userData.userData)
+    const userload = useSelector(state=>state.userData.loadingstate)
+
     const dispatcher = useDispatch();
 
     useEffect(()=>{
@@ -47,9 +50,11 @@ import 'react-toastify/dist/ReactToastify.css';
                     position="bottom-center"
                     autoClose={3000}
                 />
-        <div className="plus-icon" onClick={handleplusiconClick}>
-                <FontAwesomeIcon icon={faAdd} size="1x" />
-        </div>
+
+        {   
+
+            !userload && (userData && (userData.Admin &&(<div className="plus-icon" onClick={handleplusiconClick}><FontAwesomeIcon icon={faAdd} size="1x" /></div>)))
+         }
 
     </div>
         </>
