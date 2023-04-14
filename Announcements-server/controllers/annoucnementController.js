@@ -38,7 +38,7 @@ const AddAnnouncement = async (req,res) => {
 const deleteAnnouncement = async (req,res) => {
     const id = req.params.id
     try {
-        const deldata = await Announcementmodel.findByIdAndDelete(id)
+        await Announcementmodel.findByIdAndDelete(id)
         res.status(201).json({"message":"Announcement deleted successfully"})
     } catch (error) {
         console.log(error)

@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { createUser } from "../redux/ducks/userLoginReducer";
 import "../styles/Signup.css"
 import {Link} from 'react-router-dom'
+import { ToastContainer } from "react-toastify";
 
 const Signup = () => {
     const dispatcher = useDispatch()
@@ -31,6 +32,12 @@ const Signup = () => {
 
     return ( 
         <div className="signup-div">
+            <ToastContainer 
+                position="bottom-center"
+                autoclose={2000}
+            />
+
+            <h1>Signup</h1>            
 
             <input type="text" name="name" id="name" onChange={handleDataChange} placeholder="FullName"/>
 

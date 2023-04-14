@@ -28,13 +28,18 @@
     display: none;
 }
 .options-onhover {
-    background-color: #6BDBA3;
-    border-radius: 15px;
+    background-color: #ECF9FF;
+    box-shadow: 0 1px 2px #122932;
+    border-radius: 5px;
     color: #202A25;
     position: absolute;
+    width: max-content;
+    padding: 0 1%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
     z-index: 1;
-    top: 6vh;
-    width: 6%;
+    top: 8vh;
 }
 .Navbar-ind-link{
  cursor: pointer;

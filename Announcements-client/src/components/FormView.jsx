@@ -28,7 +28,9 @@ const FormView = () => {
    
 
     const handleSubmitClick =  () => {
+        
         dispatcher(postAnnouncement({...formdata}))
+        navigator(-1)
     }
 
     const handlebackButton = () =>{
@@ -59,19 +61,16 @@ const FormView = () => {
                     />
              
             
-            <div className="announcement-form-subject">
+            <div className="announcement-form-subject form-reset">
                 <label htmlFor="subject">Enter the subject:</label><br />
                 <textarea name="subject" id="subject" cols="100" rows="3" onChange={handleOnChange} ></textarea>
             </div>
 
-            <div className="announcement-form-description">
+            <div className="announcement-form-description form-reset">
             
                 <label htmlFor="description">Enter the Description:</label><br />
                 <textarea name="description" id="description" cols="100" rows="10" onChange={handleOnChange} ></textarea>
             </div>
-
-                {/* <input type="text" name="subject" id="subject" onChange={handleOnChange}/> */}
-                {/* <input type="text" name="description" id="description"  onChange={handleOnChange}/>  */}
 
           <div className="Form-submit-btn">
             <button type="button" onClick={handleSubmitClick}>

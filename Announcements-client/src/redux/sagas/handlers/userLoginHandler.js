@@ -3,17 +3,17 @@ import {call,put} from 'redux-saga/effects'
 import { setUserData } from '../../ducks/userdataReducer';
 import { setUser } from '../../ducks/userLoginReducer';
 import {userDatareq, userLogin , userSignup} from '../requests/userLoginRequests'
+import { toast } from 'react-toastify';
 
 export function* userLoginHandler(action){
-    // console.log(action.postdata);
     try {
         const res = yield call( () => userLogin(action));
         Cookies.set('jwtToken',res.data.Token);
         yield put(setUser({loggedIn:true,err:false}))
-        
+        toast.success("login success")
         
     } catch (error) {
-        console.log(error.message)
+        toast.error("Check your Credentials!")
         yield put(setUser({loggedIn:false,err:true}))
     }
 }
@@ -21,7 +21,9 @@ export function* userLoginHandler(action){
 export function* userSignupHandler(action) {
     try {
         yield call(() => userSignup(action))
+        toast.success("new user created!")
     } catch (error) {
+        toast.error("failed to create new user")
         console.log(error.message)
     }
 }

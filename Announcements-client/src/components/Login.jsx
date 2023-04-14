@@ -4,6 +4,7 @@ import "../styles/Login.css";
 import { getUser } from "../redux/ducks/userLoginReducer";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 const Login = () => {
 
@@ -40,6 +41,10 @@ const Login = () => {
             <h1>Login</h1>
             <div className="input-section">
 
+                <ToastContainer
+                    position="bottom-center"
+                    autoClose={2000}
+                />
 
             {/* {
              isLoginerror?

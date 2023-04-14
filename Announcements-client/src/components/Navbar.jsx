@@ -10,12 +10,11 @@ import { useNavigate , useLocation } from "react-router-dom";
 
 const Navbar = () => {
     const location = useLocation()
-    
 
     const navigator = useNavigate()
 
     const [divClass,setDivClass] = useState('options')
-   
+    
     const handleMouseOn =() => {
         const asn = divClass=="options"?"options-onhover":"options"
         setDivClass(asn)
