@@ -8,6 +8,7 @@ const userRoute = require('./Routes/userRoutes')
 const AnnouncementRoute = require('./Routes/AnnouncementRoutes')
 const bodyParser = require("body-parser")
 
+
 server.use(express.json())
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(cors());
