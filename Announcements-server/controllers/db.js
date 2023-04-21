@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const uri = "mongodb://localhost:27017/Announcements";
+const uri = "mongodb+srv://saribaby1999:q4rlTFLBhX4MDobS@cluster0.9fj1a.mongodb.net/Dhindora?retryWrites=true&w=majority";
 mongoose.set('strictQuery',false);
 
 const connecttodb = async () => {
