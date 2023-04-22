@@ -11,10 +11,16 @@ const Login = () => {
     const navigator = useNavigate()
     const usedispatch = useDispatch()
 
+    
+    const userloginLoad = useSelector(state=>state.user.userLoading)
     const isUserLoggedIn = useSelector(state=>state.user.userLoggedin)
-    const isLoginerror = useSelector(state=>state.user.UserError)
-  
-   
+    
+    console.log(userloginLoad)
+    const [loadingdecider,setloadingdecider] = useState(userloginLoad);
+
+
+    
+
     const [data,setData] = useState({
         userEmail: "",
         passwd:""
@@ -37,6 +43,8 @@ const Login = () => {
 
 
     return (
+        <>
+
         <div className="login-page" >
             <h1>Login</h1>
             <div className="input-section">
@@ -44,38 +52,24 @@ const Login = () => {
                 <ToastContainer
                     position="bottom-center"
                     autoClose={2000}
-                />
-
-            {/* {
-             isLoginerror?
-             <h1>Enter correct details</h1>:
-             (isUserLoggedIn && <h1>user login successful</h1>)    
-            } */}
-
-
-
+                    />
             <section>
             <input type="email" name="userEmail" id="userEmail" onChange={handlechange} placeholder="Emailaddress" required/>
             </section>
-
             <section>
                 <input type="password" name="passwd" id="passwd" onChange={handlechange} placeholder="Password" required/>
             </section>
-
             </div>
-
-
             <div className="login-btn">
             <button type="button" onClick={handleLoginsubmit}>
                 Login
             </button>
             </div>
-
-
         <p className="login-signup-btn">Don't have account?<Link to="/signup">signup</Link></p>
     
         </div>
 
+    </>
      );
 }
  

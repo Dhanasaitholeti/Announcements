@@ -47,3 +47,13 @@ section input{
 .login-btn button:active{
     box-shadow: 0px 0.5px 2px black;
 }
+
+.loadshow{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #FFF;
+}
+.notloadshow{
+    display: none;
+}

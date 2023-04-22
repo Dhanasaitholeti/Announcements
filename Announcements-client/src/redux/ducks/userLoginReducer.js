@@ -22,14 +22,15 @@ export const createUser = (postdata) => ({
 //initial state here
 const initialState = {
     userLoggedin:false,
-    UserError:undefined
+    UserError:undefined,
+    userLoading:false
 }
 
 //Mainreducer
 const Main_Reducer = (state=initialState,action) => {
     switch (action.type) {
         case SET_USER:
-            return {...state, userLoggedin:action.userData.loggedIn, UserError:action.userData.err}
+            return {...state, userLoggedin:action.userData.loggedIn, UserError:action.userData.err, userLoading:action.userData.loading}
         default:
             return state;
     }

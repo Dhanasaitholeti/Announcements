@@ -7,14 +7,15 @@ import { toast } from 'react-toastify';
 
 export function* userLoginHandler(action){
     try {
+        yield put(setUser({loggedIn:false,err:false,loading:true}))
         const res = yield call( () => userLogin(action));
         Cookies.set('jwtToken',res.data.Token);
-        yield put(setUser({loggedIn:true,err:false}))
+        yield put(setUser({loggedIn:true,err:false,loading:false}))
         toast.success("login success")
         
     } catch (error) {
         toast.error("Check your Credentials!")
-        yield put(setUser({loggedIn:false,err:true}))
+        yield put(setUser({loggedIn:false,err:true,loading:false}))
     }
 }
 
