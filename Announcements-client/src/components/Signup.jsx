@@ -1,72 +1,91 @@
+import { Box, Button, Heading, Input, Select, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createUser } from "../redux/ducks/userLoginReducer";
-import "../styles/Signup.css"
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import { Perfectboxstyles, PerfectflexStyles } from "./Startpage";
 
 const Signup = () => {
-    const dispatcher = useDispatch()
-    const [signupData,setSignupData] = useState(
-        {
-            name:"",
-            Email:"",
-            password:"",
-            phone_num:"",
-            Gender:""
-        }
-    )
+  const dispatcher = useDispatch();
+  const [signupData, setSignupData] = useState({
+    name: "",
+    Email: "",
+    password: "",
+    phone_num: "",
+    Gender: "",
+  });
 
-    const handleDataChange = (e) => {
-        setSignupData({...signupData, [e.target.name]:e.target.value})
-    }
+  console.log(signupData);
 
-    const handleSignupClick = () => {
-        const FullName = signupData.name
-        const Email = signupData.Email
-        const passwd = signupData.password
-        const Phone_Num = signupData.phone_num
-        const Gender = signupData.Gender
-        dispatcher(createUser({FullName, Email, passwd, Phone_Num, Gender}))
-    } 
+  const handleDataChange = (e) => {
+    setSignupData({ ...signupData, [e.target.name]: e.target.value });
+  };
 
-    return ( 
-        <div className="signup-div">
-            <ToastContainer 
-                position="bottom-center"
-                autoclose={2000}
-            />
+  const handleSignupClick = () => {
+    const FullName = signupData.name;
+    const Email = signupData.Email;
+    const passwd = signupData.password;
+    const Phone_Num = signupData.phone_num;
+    const Gender = signupData.Gender;
+    dispatcher(createUser({ FullName, Email, passwd, Phone_Num, Gender }));
+  };
 
-            <h1>Signup</h1>            
+  const inputStyles = {
+    w: "70%",
+    onChange: handleDataChange,
+    variant: "filled",
+  };
 
-            <input type="text" name="name" id="name" onChange={handleDataChange} placeholder="FullName"/>
+  return (
+    <>
+      <Box {...Perfectboxstyles} mt="5%" {...PerfectflexStyles} h="60vh">
+        <Heading>Signup</Heading>
 
-            <input type="email" name="Email" id="Email" onChange={handleDataChange} placeholder="Email"/>
+        <Box w="80%" {...PerfectflexStyles} gap="5">
+          <Input
+            type="text"
+            name="name"
+            placeholder="FullName"
+            {...inputStyles}
+          />
+          <Input
+            type="email"
+            name="Email"
+            placeholder="Email"
+            {...inputStyles}
+          />
+          <Input
+            type="password"
+            name="password"
+            placeholder="Password"
+            {...inputStyles}
+          />
+          <Input
+            type="text"
+            name="phone_num"
+            {...inputStyles}
+            placeholder="PhoneNumber"
+          />
+          <Select name="Gender" {...inputStyles}>
+            <option value="">select</option>
+            <option value="MALE">Male</option>
+            <option value="FEMALE">Female</option>
+            <option value="Others">Others</option>
+          </Select>
+        </Box>
 
-            <input type="password" name="password" id="password" onChange={handleDataChange} placeholder="Password"/>
+        <Button colorScheme="blue" onClick={handleSignupClick}>
+          Signup
+        </Button>
 
-            <input type="password" name="passwors" id="cpassword" placeholder="confirm password" />
+        <Text>
+          already have account?<Link to="/login">login</Link>
+        </Text>
+      </Box>
+      <ToastContainer position="bottom-center" autoclose={2000} />
+    </>
+  );
+};
 
-            <input type="text" name="phone_num" id="phone_num" onChange={handleDataChange} placeholder="PhoneNumber"/>
-
-            <select name="Gender" id="Gender" onChange={handleDataChange}>
-                <option value="">select</option>
-                 <option value="MALE">Male</option>
-                 <option value="FEMALE">Female</option>
-                 <option value="Others">Others</option>
-            </select>
-
-            <button 
-            type="button"
-            onClick={handleSignupClick}
-            >
-            Signup
-            </button>
-
-            <p>already have account?<Link to="/login">login</Link></p>
-
-        </div>
-     );
-}
- 
 export default Signup;

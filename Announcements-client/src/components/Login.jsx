@@ -1,10 +1,11 @@
+import { Box, Button, Heading, Input, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import "../styles/Login.css";
 import { getUser } from "../redux/ducks/userLoginReducer";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import { Perfectboxstyles, PerfectflexStyles } from "./Startpage";
 
 const Login = () => {
   const navigator = useNavigate();
@@ -19,6 +20,8 @@ const Login = () => {
     userEmail: "",
     passwd: "",
   });
+
+  console.log(data);
 
   if (isUserLoggedIn) {
     navigator("/home");
@@ -36,40 +39,39 @@ const Login = () => {
 
   return (
     <>
-      <div className="login-page">
-        <h1>Login</h1>
-        <div className="input-section">
+      <Box {...Perfectboxstyles} {...PerfectflexStyles}>
+        <Heading>Login</Heading>
+
+        <Box mx="auto" {...PerfectflexStyles} w={"60%"} gap="10px">
           <ToastContainer position="bottom-center" autoClose={2000} />
-          <section>
-            <input
-              type="email"
-              name="userEmail"
-              id="userEmail"
-              onChange={handlechange}
-              placeholder="Emailaddress"
-              required
-            />
-          </section>
-          <section>
-            <input
-              type="password"
-              name="passwd"
-              id="passwd"
-              onChange={handlechange}
-              placeholder="Password"
-              required
-            />
-          </section>
-        </div>
-        <div className="login-btn">
-          <button type="button" onClick={handleLoginsubmit}>
-            Login
-          </button>
-        </div>
-        <p className="login-signup-btn">
+
+          <Input
+            variant="filled"
+            w="75%"
+            name="userEmail"
+            type="email"
+            onChange={handlechange}
+            placeholder="Emailaddress"
+          />
+
+          <Input
+            variant="filled"
+            w="75%"
+            name="passwd"
+            type="password"
+            onChange={handlechange}
+            placeholder="Password"
+          />
+        </Box>
+
+        <Button colorScheme="blue" onClick={handleLoginsubmit}>
+          Login
+        </Button>
+
+        <Text className="login-signup-btn">
           Don't have account?<Link to="/signup">signup</Link>
-        </p>
-      </div>
+        </Text>
+      </Box>
     </>
   );
 };
