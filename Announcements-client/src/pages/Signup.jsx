@@ -16,8 +16,6 @@ const Signup = () => {
     Gender: "",
   });
 
-  console.log(signupData);
-
   const handleDataChange = (e) => {
     setSignupData({ ...signupData, [e.target.name]: e.target.value });
   };

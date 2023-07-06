@@ -14,8 +14,6 @@ const Login = () => {
   const userloginLoad = useSelector((state) => state.user.userLoading);
   const isUserLoggedIn = useSelector((state) => state.user.userLoggedin);
 
-  // const [loadingdecider,setloadingdecider] = useState(userloginLoad);
-
   const [data, setData] = useState({
     userEmail: "",
     passwd: "",
