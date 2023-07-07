@@ -1,4 +1,4 @@
-import { Box, Button, Heading, Input, Text } from "@chakra-ui/react";
+import { Box, Button, Heading, Input, Spinner, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { getUser } from "../redux/ducks/userLoginReducer";
@@ -14,12 +14,12 @@ const Login = () => {
   const userloginLoad = useSelector((state) => state.user.userLoading);
   const isUserLoggedIn = useSelector((state) => state.user.userLoggedin);
 
+  console.log(userloginLoad);
+
   const [data, setData] = useState({
     userEmail: "",
     passwd: "",
   });
-
-  console.log(data);
 
   if (isUserLoggedIn) {
     navigator("/home");
@@ -37,39 +37,46 @@ const Login = () => {
 
   return (
     <>
-      <Box {...Perfectboxstyles} {...PerfectflexStyles}>
-        <Heading>Login</Heading>
+      {
+        <Box {...Perfectboxstyles} {...PerfectflexStyles}>
+          <Heading>Login</Heading>
+          {userloginLoad ? (
+            <Spinner />
+          ) : (
+            <>
+              <Box mx="auto" {...PerfectflexStyles} w={"60%"} gap="10px">
+                <ToastContainer position="bottom-center" autoClose={2000} />
 
-        <Box mx="auto" {...PerfectflexStyles} w={"60%"} gap="10px">
-          <ToastContainer position="bottom-center" autoClose={2000} />
+                <Input
+                  variant="filled"
+                  w="75%"
+                  name="userEmail"
+                  type="email"
+                  onChange={handlechange}
+                  placeholder="Emailaddress"
+                />
 
-          <Input
-            variant="filled"
-            w="75%"
-            name="userEmail"
-            type="email"
-            onChange={handlechange}
-            placeholder="Emailaddress"
-          />
+                <Input
+                  variant="filled"
+                  w="75%"
+                  name="passwd"
+                  type="password"
+                  onChange={handlechange}
+                  placeholder="Password"
+                />
+              </Box>
 
-          <Input
-            variant="filled"
-            w="75%"
-            name="passwd"
-            type="password"
-            onChange={handlechange}
-            placeholder="Password"
-          />
+              <Button colorScheme="blue" onClick={handleLoginsubmit}>
+                Login
+              </Button>
+
+              <Text className="login-signup-btn">
+                Don't have account?<Link to="/signup">signup</Link>
+              </Text>
+            </>
+          )}
         </Box>
-
-        <Button colorScheme="blue" onClick={handleLoginsubmit}>
-          Login
-        </Button>
-
-        <Text className="login-signup-btn">
-          Don't have account?<Link to="/signup">signup</Link>
-        </Text>
-      </Box>
+      }
     </>
   );
 };
