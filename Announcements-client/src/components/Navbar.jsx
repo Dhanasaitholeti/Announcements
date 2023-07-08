@@ -33,7 +33,11 @@ const Navbar = () => {
         location.pathname == "/login" ||
         location.pathname == "/" ||
         location.pathname == "/signup"
-      ) && <Button onClick={handleLogout}>logout</Button>}
+      ) && (
+        <Button onClick={handleLogout} colorScheme="red">
+          logout
+        </Button>
+      )}
     </Box>
   );
 };

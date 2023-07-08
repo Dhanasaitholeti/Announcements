@@ -41,7 +41,7 @@ const Login = () => {
         <Box {...Perfectboxstyles} {...PerfectflexStyles}>
           <Heading>Login</Heading>
           {userloginLoad ? (
-            <Spinner />
+            <Spinner size={"lg"} color={"blue"} />
           ) : (
             <>
               <Box mx="auto" {...PerfectflexStyles} w={"60%"} gap="10px">
