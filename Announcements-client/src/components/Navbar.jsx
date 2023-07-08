@@ -29,6 +29,18 @@ const Navbar = () => {
     >
       <Heading>Dhindora</Heading>
 
+      {location.pathname === "/login" && (
+        <Button onClick={() => navigator("/signup")} colorScheme="green">
+          Signup
+        </Button>
+      )}
+
+      {location.pathname === "/signup" && (
+        <Button onClick={() => navigator("/login")} colorScheme="green">
+          login
+        </Button>
+      )}
+
       {!(
         location.pathname == "/login" ||
         location.pathname == "/" ||

@@ -69,10 +69,6 @@ const Login = () => {
               <Button colorScheme="blue" onClick={handleLoginsubmit}>
                 Login
               </Button>
-
-              <Text className="login-signup-btn">
-                Don't have account?<Link to="/signup">signup</Link>
-              </Text>
             </>
           )}
         </Box>

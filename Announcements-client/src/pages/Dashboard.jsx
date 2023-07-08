@@ -1,12 +1,11 @@
-import { Box, Grid, GridItem, SimpleGrid } from "@chakra-ui/react";
-
+import { Box, Grid, GridItem } from "@chakra-ui/react";
 import { Route, Routes } from "react-router-dom";
-import checkToken from "./checks/checkToken";
-import Announcement from "./Announcements";
-import UserDetails from "./UserDetails";
-import AnnouncementForm from "./AnnouncementForm";
-import ShowAnnouncement from "./ShowAnnoucement";
-import NotFound from "./NotFound";
+import checkToken from "../components/checks/checkToken";
+import Announcement from "../components/Announcements";
+import UserDetails from "../components/UserDetails";
+import AnnouncementForm from "../components/AnnouncementForm";
+import ShowAnnouncement from "../components/ShowAnnoucement";
+import NotFound from "../components/NotFound";
 
 const Dashboard = () => {
   const boxstyles = {

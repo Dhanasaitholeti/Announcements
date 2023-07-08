@@ -76,10 +76,6 @@ const Signup = () => {
         <Button colorScheme="blue" onClick={handleSignupClick}>
           Signup
         </Button>
-
-        <Text>
-          already have account?<Link to="/login">login</Link>
-        </Text>
       </Box>
       <ToastContainer position="bottom-center" autoclose={2000} />
     </>
