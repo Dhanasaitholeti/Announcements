@@ -8,7 +8,8 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../styles/addAnnouncement.css";
 import "../styles/popupMsg.css";
-import { Box, Button, Heading, Textarea } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Textarea } from "@chakra-ui/react";
+
 const FormView = () => {
   const navigator = useNavigate();
 
@@ -37,47 +38,36 @@ const FormView = () => {
 
   return (
     <>
-      <Box>
-        <Box>
+      <Box p="5">
+        <Box p="5">
           <Box onClick={handlebackButton}>
             <FontAwesomeIcon icon={faArrowAltCircleLeft} size="2x" />
           </Box>
         </Box>
         <Box>
-          <Heading>Make New Dhindora..!</Heading>
+          <Heading textAlign={"center"} color="red">
+            Make New Dhindora..!
+          </Heading>
         </Box>
 
         <ToastContainer autoClose={3000} position="bottom-center" />
 
-        <Box>
-          <label htmlFor="subject">Enter the subject:</label>
-          <br />
-          <textarea
-            name="subject"
-            id="subject"
-            cols="100"
-            rows="3"
-            onChange={handleOnChange}
-          ></textarea>
-        </Box>
+        <Flex flexDir={"column"} alignItems="center">
+          <Box w="80%">
+            <label htmlFor="subject">Enter the subject:</label>
+            <br />
+            <Textarea name="subject" onChange={handleOnChange} />
+          </Box>
+          <Box w="80%">
+            <label htmlFor="description">Enter the Description:</label>
+            <br />
+            <Textarea name="description" rows={10} onChange={handleOnChange} />
+          </Box>
 
-        <Box>
-          <label htmlFor="description">Enter the Description:</label>
-          <br />
-          <Textarea
-            name="description"
-            id="description"
-            cols="100"
-            rows="10"
-            onChange={handleOnChange}
-          />
-        </Box>
-
-        <Box>
           <Button onClick={handleSubmitClick} colorScheme="green">
             Submit
           </Button>
-        </Box>
+        </Flex>
       </Box>
     </>
   );
