@@ -1,7 +1,7 @@
 import "../styles/showAnnoucement.css";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowAltCircleLeft } from "@fortawesome/free-solid-svg-icons";
+import { faArrowCircleLeft } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import {
@@ -11,6 +11,7 @@ import {
 import NoAuth from "./NoAuth";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { ToastContainer } from "react-toastify";
+import { Box, Button } from "@chakra-ui/react";
 
 const ShowAnnouncement = () => {
   const dispatcher = useDispatch();
@@ -72,21 +73,17 @@ const ShowAnnouncement = () => {
 
   return (
     <>
-      <div className="btns-group">
-        <div className="btn-back">
-          <FontAwesomeIcon
-            icon={faArrowAltCircleLeft}
-            onClick={handleclick}
-            size="2x"
-          />
-        </div>
+      <Box className="btns-group">
+        <Button w="min-content" onClick={handleclick} colorScheme="blue">
+          Back
+        </Button>
 
         {!userload && userData && userData.Admin && (
-          <button type="button" className="btn-edit" onClick={handleEditClick}>
-            edit
-          </button>
+          <Button colorScheme="blue" onClick={handleEditClick}>
+            Edit
+          </Button>
         )}
-      </div>
+      </Box>
 
       {showEdit ? (
         <div className="announcement-main-show-edit">

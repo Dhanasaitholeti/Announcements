@@ -27,11 +27,11 @@ const AnnouncementView = ({ data, userData }) => {
           <React.Fragment key={eachobj._id}>
             <Box>
               <Text>{eachobj.subject}</Text>
-              <Text>
+              <Box>
                 <ReactMarkdown>
                   {eachobj.Description.slice(0, 30) + "........"}
                 </ReactMarkdown>
-              </Text>
+              </Box>
             </Box>
 
             <Box>

@@ -9,7 +9,7 @@ import { faAdd } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Heading } from "@chakra-ui/react";
+import { Box, Button, Heading } from "@chakra-ui/react";
 
 const Announcement = () => {
   const navigator = useNavigate();
@@ -53,9 +53,13 @@ const Announcement = () => {
         <ToastContainer position="bottom-center" autoClose={3000} />
 
         {!userload && userData && userData.Admin && (
-          <div className="plus-icon" onClick={handleplusiconClick}>
+          <Button
+            borderRadius="lg"
+            colorScheme="green"
+            onClick={handleplusiconClick}
+          >
             <FontAwesomeIcon icon={faAdd} size="1x" />
-          </div>
+          </Button>
         )}
       </div>
     </>
