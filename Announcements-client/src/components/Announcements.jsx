@@ -9,7 +9,7 @@ import { faAdd } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Box, Button, Heading } from "@chakra-ui/react";
+import { Box, Button, Grid, GridItem, Heading } from "@chakra-ui/react";
 
 const Announcement = () => {
   const navigator = useNavigate();
@@ -33,7 +33,7 @@ const Announcement = () => {
 
   return (
     <>
-      <div className="announcement-allGroup">
+      <Box>
         {
           //this is the whole logic for displaying components
           errstate ? (
@@ -47,21 +47,23 @@ const Announcement = () => {
             )
           )
         }
-      </div>
+      </Box>
 
-      <div className="icons">
+      <Box mt={"2%"}>
         <ToastContainer position="bottom-center" autoClose={3000} />
 
         {!userload && userData && userData.Admin && (
           <Button
-            borderRadius="lg"
             colorScheme="green"
+            h="50px"
+            aspectRatio={1}
+            borderRadius={"50px "}
             onClick={handleplusiconClick}
           >
-            <FontAwesomeIcon icon={faAdd} size="1x" />
+            <FontAwesomeIcon icon={faAdd} size="2x" />
           </Button>
         )}
-      </div>
+      </Box>
     </>
   );
 };

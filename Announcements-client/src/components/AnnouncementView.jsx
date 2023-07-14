@@ -6,7 +6,7 @@ import {
   getAnnouncemnt,
 } from "../redux/ducks/AnnouncementReducer";
 import { useNavigate } from "react-router-dom";
-import { Box, Button, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Grid, Text, VStack } from "@chakra-ui/react";
 
 const AnnouncementView = ({ data, userData }) => {
   const navigator = useNavigate();
@@ -20,31 +20,43 @@ const AnnouncementView = ({ data, userData }) => {
     navigator(`/home/announcement/${id}`);
   };
 
+  const ButtonStyles = {
+    width: "90%",
+  };
+
   return (
     <>
       {data.map((eachobj) => {
         return (
-          <React.Fragment key={eachobj._id}>
+          <Flex justifyContent={"space-between"} key={eachobj._id}>
             <Box>
               <Text>{eachobj.subject}</Text>
               <Box>
                 <ReactMarkdown>
-                  {eachobj.Description.slice(0, 30) + "........"}
+                  {eachobj.Description.slice(0, 50) + "........"}
                 </ReactMarkdown>
               </Box>
             </Box>
 
-            <Box>
+            <VStack>
               {userData.Admin && (
-                <Button onClick={() => handleOnClickDelete(eachobj._id)}>
+                <Button
+                  {...ButtonStyles}
+                  colorScheme="red"
+                  onClick={() => handleOnClickDelete(eachobj._id)}
+                >
                   remove
                 </Button>
               )}
-              <Button onClick={() => handleOnClickShow(eachobj._id)}>
+              <Button
+                {...ButtonStyles}
+                colorScheme="green"
+                onClick={() => handleOnClickShow(eachobj._id)}
+              >
                 show
               </Button>
-            </Box>
-          </React.Fragment>
+            </VStack>
+          </Flex>
         );
       })}
     </>

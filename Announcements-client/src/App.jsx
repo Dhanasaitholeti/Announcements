@@ -1,3 +1,4 @@
+import { Box } from "@chakra-ui/react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Startpage from "./pages/Startpage";
@@ -8,7 +9,7 @@ import NotFound from "./components/NotFound";
 
 function App() {
   return (
-    <div className="App">
+    <Box className="App">
       <Navbar />
       <Routes>
         <Route path="/" element={<Startpage />} />
@@ -17,7 +18,7 @@ function App() {
         <Route path="/home/*" element={<Dashboard />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </div>
+    </Box>
   );
 }
 

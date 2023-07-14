@@ -9,7 +9,6 @@ import NotFound from "../components/NotFound";
 
 const Dashboard = () => {
   const boxstyles = {
-    boxShadow: "dark-lg",
     borderRadius: 5,
     p: 5,
   };
@@ -28,7 +27,7 @@ const Dashboard = () => {
           </Routes>
         </Box>
       </GridItem>
-      <GridItem colStart={5} colSpan={2}>
+      <GridItem colStart={5} colSpan={2} pos={"relative"} left={"1%"}>
         <Box {...boxstyles}>
           <UserDetails />
         </Box>

@@ -9,33 +9,31 @@ const UserView = ({ data }) => {
   };
 
   return (
-    <Box className="userDetails-view">
-      <Box className="image-container">
+    <Box>
+      <Box>
         <Image src={data.Gender === "FEMALE" ? animegirl : animeboy} />
       </Box>
 
       <Flex flexDir="column">
         <SimpleGrid {...gridStyles}>
-          <Text className="userDetails-title">Name :</Text>
-          <Text className="userDetails-value">{data.Name}</Text>
+          <Text>Name :</Text>
+          <Text>{data.Name}</Text>
         </SimpleGrid>
         <SimpleGrid {...gridStyles}>
-          <Text className="userDetails-title">Gender :</Text>
-          <Text className="userDetails-value">{data.Gender}</Text>
+          <Text>Gender :</Text>
+          <Text>{data.Gender}</Text>
         </SimpleGrid>
         <SimpleGrid {...gridStyles}>
-          <Text className="userDetails-title">Email :</Text>
-          <Text className="userDetails-value">{data.Email}</Text>
+          <Text>Email :</Text>
+          <Text>{data.Email}</Text>
         </SimpleGrid>
         <SimpleGrid {...gridStyles}>
-          <Text className="userDetails-title">Role :</Text>
-          <Text className="userDetails-value">
-            {data.Admin ? "Admin" : data.POR}
-          </Text>
+          <Text>Role :</Text>
+          <Text>{data.Admin ? "Admin" : data.POR}</Text>
         </SimpleGrid>
         <SimpleGrid {...gridStyles}>
-          <Text className="userDetails-title">Phone :</Text>
-          <Text className="userDetails-value">{data.Phone_Num}</Text>
+          <Text>Phone :</Text>
+          <Text>{data.Phone_Num}</Text>
         </SimpleGrid>
       </Flex>
     </Box>
