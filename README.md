@@ -1,3 +1,5 @@
+<h1 align="center>Under Development</h1>
+
 # Dhindora
 
 It is a `MERN` Web application that is used as a online notice borad for SCB students
@@ -21,6 +23,4 @@ Author: @dhanasaitholeti
 - `Authentication/Authorization` are done by using `Jsonwebtoken`
 - `MongoDB` is used as the Database
 
-
- 
-___Thank you___
+**_Thank you_**
