@@ -1,14 +1,13 @@
 import { useEffect } from "react";
-import "../styles/annoucement.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useNavigate } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
+import { faAdd } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getAnnouncemnt } from "../redux/ducks/AnnouncementReducer";
 import AnnouncementView from "./AnnouncementView";
 import NoAuth from "./NoAuth";
-import { faAdd } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { Box, Button, Grid, GridItem, Heading } from "@chakra-ui/react";
 
 const Announcement = () => {
@@ -49,7 +48,7 @@ const Announcement = () => {
         }
       </Box>
 
-      <Box mt={"2%"}>
+      <Box mt={"2%"} position={"absolute"} zIndex={99} top={"85%"}>
         <ToastContainer position="bottom-center" autoClose={3000} />
 
         {!userload && userData && userData.Admin && (

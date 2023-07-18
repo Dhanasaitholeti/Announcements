@@ -16,7 +16,7 @@ const Dashboard = () => {
   checkToken();
 
   return (
-    <Grid templateColumns="repeat(6,1fr)" gap={5} p={3}>
+    <Grid templateColumns="repeat(6,1fr)" gap={5} p={3} minH="90vh">
       <GridItem colSpan={4}>
         <Box {...boxstyles}>
           <Routes>
