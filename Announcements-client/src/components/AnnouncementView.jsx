@@ -43,14 +43,14 @@ const AnnouncementView = ({ data, userData }) => {
             boxShadow={"md"}
             px={5}
             py={2}
-            mt={2}
+            mt={3}
           >
             <Box>
-              <Heading>{eachobj.subject}</Heading>
-              <Box>
-                <ReactMarkdown>
-                  {eachobj.Description.slice(0, 50) + "........"}
-                </ReactMarkdown>
+              <Heading fontSize={"24px"} noOfLines={3}>
+                {eachobj.subject}
+              </Heading>
+              <Box fontSize={"16px"} noOfLines={3}>
+                <ReactMarkdown>{eachobj.Description}</ReactMarkdown>
               </Box>
             </Box>
 

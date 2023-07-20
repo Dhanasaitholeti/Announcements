@@ -8,7 +8,14 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../styles/addAnnouncement.css";
 import "../styles/popupMsg.css";
-import { Box, Button, Flex, Heading, Textarea } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  FormLabel,
+  Heading,
+  Textarea,
+} from "@chakra-ui/react";
 
 const FormView = () => {
   const navigator = useNavigate();
@@ -41,7 +48,11 @@ const FormView = () => {
       <Box p="5">
         <Box p="5">
           <Box onClick={handlebackButton}>
-            <FontAwesomeIcon icon={faArrowAltCircleLeft} size="2x" />
+            <FontAwesomeIcon
+              cursor={"pointer"}
+              icon={faArrowAltCircleLeft}
+              size="2x"
+            />
           </Box>
         </Box>
         <Box>
@@ -52,16 +63,29 @@ const FormView = () => {
 
         <ToastContainer autoClose={3000} position="bottom-center" />
 
-        <Flex flexDir={"column"} alignItems="center">
+        <Flex flexDir={"column"} alignItems="center" gap={5}>
           <Box w="80%">
-            <label htmlFor="subject">Enter the subject:</label>
+            <FormLabel mb={0} fontSize={"20px"}>
+              Enter the subject:
+            </FormLabel>
             <br />
-            <Textarea name="subject" onChange={handleOnChange} />
+            <Textarea
+              name="subject"
+              onChange={handleOnChange}
+              placeholder="Enter The Title"
+            />
           </Box>
           <Box w="80%">
-            <label htmlFor="description">Enter the Description:</label>
+            <FormLabel mb={0} fontSize={"20px"}>
+              Enter the Description:
+            </FormLabel>
             <br />
-            <Textarea name="description" rows={10} onChange={handleOnChange} />
+            <Textarea
+              name="description"
+              rows={10}
+              onChange={handleOnChange}
+              placeholder="Enter The Annoucement Description"
+            />
           </Box>
 
           <Button onClick={handleSubmitClick} colorScheme="green">
