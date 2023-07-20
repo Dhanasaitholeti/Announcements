@@ -1,4 +1,3 @@
-import "../styles/showAnnoucement.css";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowCircleLeft } from "@fortawesome/free-solid-svg-icons";
@@ -7,11 +6,18 @@ import { useNavigate, useParams } from "react-router-dom";
 import {
   editAnnouncement,
   showAnnouncement,
-} from "../redux/ducks/AnnouncementReducer";
-import NoAuth from "./NoAuth";
+} from "../../redux/ducks/AnnouncementReducer";
+import NoAuth from "../NoAuth";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { ToastContainer } from "react-toastify";
-import { Box, Button } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  FormLabel,
+  HStack,
+  Text,
+  Textarea,
+} from "@chakra-ui/react";
 
 const ShowAnnouncement = () => {
   const dispatcher = useDispatch();
@@ -73,62 +79,60 @@ const ShowAnnouncement = () => {
 
   return (
     <>
-      <Box className="btns-group">
+      <HStack justifyContent={"space-between"}>
         <Button w="min-content" onClick={handleclick} colorScheme="blue">
           Back
         </Button>
 
         {!userload && userData && userData.Admin && (
           <Button colorScheme="blue" onClick={handleEditClick}>
-            Edit
+            {showEdit ? "Cancel" : "Edit"}
           </Button>
         )}
-      </Box>
+      </HStack>
 
       {showEdit ? (
-        <div className="announcement-main-show-edit">
+        <Box>
           <ToastContainer position="bottom-center" autoClose={3000} />
-          <div className="announcement-form-subject">
-            <label htmlFor="subject">Edit the subject:</label>
+          <Box>
+            <FormLabel htmlFor="subject">Edit the subject:</FormLabel>
             <br />
-            <textarea
+            <Textarea
               name="subject"
               id="subject"
               cols="100"
               rows="3"
               defaultValue={data.subject}
               onChange={handleEditOnchange}
-            ></textarea>
-          </div>
+            ></Textarea>
+          </Box>
 
-          <div className="announcement-form-description">
-            <label htmlFor="description">Edit the Description:</label>
+          <Box className="announcement-form-description">
+            <FormLabel htmlFor="description">Edit the Description:</FormLabel>
             <br />
-            <textarea
+            <Textarea
               name="description"
               id="description"
               cols="100"
               rows="10"
               defaultValue={data.Description}
               onChange={handleEditOnchange}
-            ></textarea>
-          </div>
+            ></Textarea>
+          </Box>
 
-          <button type="button" onClick={handleEditDhindora}>
+          <Button type="button" onClick={handleEditDhindora}>
             submit
-          </button>
-        </div>
+          </Button>
+        </Box>
       ) : errstate ? (
         <NoAuth />
       ) : loadstate ? (
         <h1>loading...</h1>
       ) : (
         data && (
-          <div className="announcement-main-show">
-            <div className="annoucement-main-des">
-              <ReactMarkdown>{data.Description}</ReactMarkdown>
-            </div>
-          </div>
+          <Box boxShadow={"md"}>
+            <ReactMarkdown>{data.Description}</ReactMarkdown>
+          </Box>
         )
       )}
     </>

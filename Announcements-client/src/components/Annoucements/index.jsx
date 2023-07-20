@@ -5,9 +5,9 @@ import { ToastContainer } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { faAdd } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { getAnnouncemnt } from "../redux/ducks/AnnouncementReducer";
+import { getAnnouncemnt } from "../../redux/ducks/AnnouncementReducer";
 import AnnouncementView from "./AnnouncementView";
-import NoAuth from "./NoAuth";
+import NoAuth from "../NoAuth";
 import { Box, Button, Grid, GridItem, Heading } from "@chakra-ui/react";
 
 const Announcement = () => {

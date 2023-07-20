@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import {
   deleteAnnoucement,
   getAnnouncemnt,
-} from "../redux/ducks/AnnouncementReducer";
+} from "../../redux/ducks/AnnouncementReducer";
 import { useNavigate } from "react-router-dom";
 import {
   Box,

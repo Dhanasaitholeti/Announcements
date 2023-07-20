@@ -1,10 +1,10 @@
 import { Box, Grid, GridItem } from "@chakra-ui/react";
 import { Route, Routes } from "react-router-dom";
 import checkToken from "../components/checks/checkToken";
-import Announcement from "../components/Announcements";
+import Announcement from "../components/Annoucements";
 import UserDetails from "../components/UserDetails";
-import AnnouncementForm from "../components/AnnouncementForm";
-import ShowAnnouncement from "../components/ShowAnnoucement";
+import AnnouncementForm from "../components/AnnoucementForm";
+import ShowAnnouncement from "../components/Annoucements/ShowAnnoucement";
 import NotFound from "../components/NotFound";
 
 const Dashboard = () => {

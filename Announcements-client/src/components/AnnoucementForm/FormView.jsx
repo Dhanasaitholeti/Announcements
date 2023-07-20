@@ -2,12 +2,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowAltCircleLeft } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { postAnnouncement } from "../redux/ducks/AnnouncementReducer";
+import { postAnnouncement } from "../../redux/ducks/AnnouncementReducer";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "../styles/addAnnouncement.css";
-import "../styles/popupMsg.css";
 import {
   Box,
   Button,
