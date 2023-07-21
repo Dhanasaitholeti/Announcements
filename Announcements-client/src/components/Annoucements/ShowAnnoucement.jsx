@@ -121,7 +121,7 @@ const ShowAnnouncement = () => {
           </Box>
 
           <Button type="button" onClick={handleEditDhindora}>
-            submit
+            Update
           </Button>
         </Box>
       ) : errstate ? (
