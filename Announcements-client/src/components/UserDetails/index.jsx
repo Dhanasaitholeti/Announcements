@@ -2,9 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserData } from "../../redux/ducks/userdataReducer";
 import UserView from "./UserView";
-
-import NoAuth from "../NoAuth";
-import { Heading } from "@chakra-ui/react";
+import { UserDeatilloading } from "../LoadingScreens/Loadings";
 
 const UserDetails = () => {
   const errstate = useSelector((state) => state.userData.errstate);
@@ -23,7 +21,7 @@ const UserDetails = () => {
         errstate ? (
           <NoAuth />
         ) : loadingstate ? (
-          <Heading>Loading...</Heading>
+          <UserDeatilloading />
         ) : (
           user && <UserView data={user} />
         )

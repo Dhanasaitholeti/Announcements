@@ -5,6 +5,7 @@ import {
   Heading,
   Skeleton,
   SkeletonText,
+  SkeletonCircle,
 } from "@chakra-ui/react";
 
 export const AnnouncementLoadings = ({ times }) => {
@@ -36,5 +37,20 @@ export const AnnouncementLoadings = ({ times }) => {
         </Flex>
       ))}
     </>
+  );
+};
+
+export const UserDeatilloading = () => {
+  return (
+    <Box>
+      <SkeletonCircle size={"150px"} />
+      <Skeleton display={"flex"} flexDir={"column"} gap={2}>
+        <p>Hello</p>
+        <p>Hello</p>
+        <p>Hello</p>
+        <p>Hello</p>
+        <p>Hello</p>
+      </Skeleton>
+    </Box>
   );
 };
