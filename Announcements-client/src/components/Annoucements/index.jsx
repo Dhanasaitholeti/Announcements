@@ -9,6 +9,7 @@ import { getAnnouncemnt } from "../../redux/ducks/AnnouncementReducer";
 import AnnouncementView from "./AnnouncementView";
 import NoAuth from "../NoAuth";
 import { Box, Button, Grid, GridItem, Heading } from "@chakra-ui/react";
+import { AnnouncementLoadings } from "../LoadingScreens/Loadings";
 
 const Announcement = () => {
   const navigator = useNavigate();
@@ -38,7 +39,7 @@ const Announcement = () => {
           errstate ? (
             <NoAuth />
           ) : loadstate ? (
-            <Heading>Loading...</Heading>
+            <AnnouncementLoadings />
           ) : (
             announcementsData &&
             userData && (

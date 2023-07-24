@@ -26,7 +26,8 @@
     "react-router-dom": "^6.9.0",
     "react-toastify": "^9.1.2",
     "redux": "^4.2.1",
-    "redux-saga": "^1.2.2"
+    "redux-saga": "^1.2.2",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
