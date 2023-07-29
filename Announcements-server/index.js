@@ -17,5 +17,5 @@ server.use("/user", userRoute);
 server.use("/announcements", AnnouncementRoute);
 
 server.listen(port, () => {
-  console.log(`The server is listening on http://localhost:${port}`);
+  console.log(`The server is listening on http://localhost:${port}...`);
 });

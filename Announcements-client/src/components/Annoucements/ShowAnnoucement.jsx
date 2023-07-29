@@ -130,7 +130,13 @@ const ShowAnnouncement = () => {
         <h1>loading...</h1>
       ) : (
         data && (
-          <Box boxShadow={"md"}>
+          <Box
+            boxShadow={"dark-lg"}
+            p={10}
+            mt={5}
+            borderRadius={"10px"}
+            minH={"75vh"}
+          >
             <ReactMarkdown>{data.Description}</ReactMarkdown>
           </Box>
         )
