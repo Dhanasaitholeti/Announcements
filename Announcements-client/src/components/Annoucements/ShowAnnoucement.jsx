@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
+
 import {
   editAnnouncement,
+  resetState,
   showAnnouncement,
 } from "../../redux/ducks/AnnouncementReducer";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
@@ -66,6 +68,10 @@ const ShowAnnouncement = () => {
 
   useEffect(() => {
     dispatcher(showAnnouncement(id));
+
+    return () => {
+      dispatcher(resetState());
+    };
   }, []);
 
   return (

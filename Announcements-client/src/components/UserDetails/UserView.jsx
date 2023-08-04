@@ -10,11 +10,14 @@ const UserView = ({ data }) => {
 
   return (
     <Box>
-      <Box>
-        <Image src={data.Gender === "FEMALE" ? animegirl : animeboy} />
-      </Box>
+      <Flex alignItems={"center"} justifyContent={"center"}>
+        <Image
+          h={"10vw"}
+          src={data.Gender === "FEMALE" ? animegirl : animeboy}
+        />
+      </Flex>
 
-      <Flex flexDir="column">
+      <Flex flexDir="column" fontWeight="bold" mt={10}>
         <SimpleGrid {...gridStyles}>
           <Text>Name :</Text>
           <Text>{data.Name}</Text>
