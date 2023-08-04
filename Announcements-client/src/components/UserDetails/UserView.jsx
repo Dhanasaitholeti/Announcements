@@ -17,7 +17,7 @@ const UserView = ({ data }) => {
         />
       </Flex>
 
-      <Flex flexDir="column" fontWeight="bold" mt={10}>
+      <Flex flexDir="column" fontWeight="bold" fontSize={"lg"} mt={10}>
         <SimpleGrid {...gridStyles}>
           <Text>Name :</Text>
           <Text>{data.Name}</Text>

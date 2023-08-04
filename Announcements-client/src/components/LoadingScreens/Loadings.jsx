@@ -43,14 +43,10 @@ export const AnnouncementLoadings = ({ times }) => {
 export const UserDeatilloading = () => {
   return (
     <Box>
-      <SkeletonCircle size={"150px"} />
-      <Skeleton display={"flex"} flexDir={"column"} gap={2}>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-      </Skeleton>
+      <Flex alignItems={"center"} justifyContent="center">
+        <SkeletonCircle size={"150px"} />
+      </Flex>
+      <SkeletonText noOfLines={10} skeletonHeight={5} mt={5} />
     </Box>
   );
 };
