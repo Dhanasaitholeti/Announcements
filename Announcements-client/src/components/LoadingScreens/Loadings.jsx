@@ -54,3 +54,20 @@ export const UserDeatilloading = () => {
     </Box>
   );
 };
+
+export const AnnouncementViewLoading = () => {
+  return (
+    <Box
+      boxShadow={"dark-lg"}
+      p={10}
+      mt={5}
+      borderRadius={"10px"}
+      minH={"75vh"}
+    >
+      <Skeleton w="30%">
+        <Heading>Hello</Heading>
+      </Skeleton>
+      <SkeletonText mt={10} noOfLines={15} skeletonHeight={5} />
+    </Box>
+  );
+};

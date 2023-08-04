@@ -1,23 +1,14 @@
 import { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowCircleLeft } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import {
   editAnnouncement,
   showAnnouncement,
 } from "../../redux/ducks/AnnouncementReducer";
-import NoAuth from "../NoAuth";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { ToastContainer } from "react-toastify";
-import {
-  Box,
-  Button,
-  FormLabel,
-  HStack,
-  Text,
-  Textarea,
-} from "@chakra-ui/react";
+import { Box, Button, FormLabel, HStack, Textarea } from "@chakra-ui/react";
+import { AnnouncementViewLoading } from "../LoadingScreens/Loadings";
 
 const ShowAnnouncement = () => {
   const dispatcher = useDispatch();
@@ -125,9 +116,9 @@ const ShowAnnouncement = () => {
           </Button>
         </Box>
       ) : errstate ? (
-        <NoAuth />
+        <Heaidng>Error Occured</Heaidng>
       ) : loadstate ? (
-        <h1>loading...</h1>
+        <AnnouncementViewLoading />
       ) : (
         data && (
           <Box

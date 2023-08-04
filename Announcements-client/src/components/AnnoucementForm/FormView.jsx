@@ -17,7 +17,6 @@ import {
 
 const FormView = () => {
   const navigator = useNavigate();
-
   const dispatcher = useDispatch();
 
   const [formdata, setFormdata] = useState({
