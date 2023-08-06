@@ -63,7 +63,7 @@ export const AnnouncementViewLoading = () => {
       <Skeleton w="30%">
         <Heading>Hello</Heading>
       </Skeleton>
-      <SkeletonText mt={10} noOfLines={15} skeletonHeight={5} />
+      <SkeletonText mt={10} noOfLines={16} skeletonHeight={5} />
     </Box>
   );
 };
