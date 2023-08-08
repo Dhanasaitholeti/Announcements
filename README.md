@@ -1,5 +1,4 @@
 # Dhindora
-## This app is under Developemnt and up with in few Days
 
 It is a `MERN` Web application that is used as a online notice borad for SCB students
 
